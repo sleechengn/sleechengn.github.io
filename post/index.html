@@ -185,6 +185,62 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="http://www.art4ai.com/post/deeplearning4j_stp/">Deeplearning4j_stp</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>简介 *deeplearning4j*是一个基于jvm的机器学习框架，主要是应用于商业环境下的机器学习应用场景。为什么这样説呢？因为它提供了商业化环境下运行的支撑体系，比如GPU、Spark等的支持，一般来説对于理论验证来説是不需要spark这些的，所以它是为商业应用打造的，它的主要技术力量来自于一家美国的初创公司：skymind.
+主页地址：http://www.deeplearning4j.org
+中文说明：http://www.deeplearning4j.org/cn
+github:https://github.com/deeplearning4j
+安装前准备： - apache maven - java sdk1.8 - eclipse/idea - git
+这些是你要安装的东西，maven主要用于项目管理依赖的库，主要是用于管理java的jar仓库，它让你能用方便的引入一个软件栈。
+java不必説了，它的下载地址在orcle上，请自行下载。
+eclipse/idea这个是开发工具，也就是ide，我们有一个好的开发工具会大大增加效率，因为我本人使用的是eclipse和idea，所以写的这个，java还有很多开发工具，这里就不一一説了。但是有一点要注意，ide必须支持maven项目管理。
+git是一个代码仓库工具，类似的还有svn，主要是代码管理用
+安装java 请在oracle下载java sdk，注意下载的时候要1.8版本，虽然其它版本支持，但是不同的版本有一定的区别，所以这个最好1.8.
+下载deeplearning4j实例 github地址：https://github.com/deeplearning4j/dl4j-examples.git 将代码下载到本地解压。
+下面以idea为例讲一下如何导入运行
+配置git 把git的路径配置好，不然git可能不能正常工作，后面不没有办法了。
+配置maven maven home一定要配置好，还有就是User setting files也可以指定为maven目录里的settings，因为这样可以使用自己定义的镜像。 `
+阿里云：
+&lt;mirror&gt; &lt;id&gt;alimaven&lt;/id&gt; &lt;name&gt;aliyun maven&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;/mirror&gt;  这个可以加速你的下载，因为你在国内访问很慢所以用这个，这个配置就复制到settings.xml mirrors里面就行
+开始导入
+开始下载jar包了，这个要等一会儿，有的很慢，所以只要没断就等就好。
+在idea里配置java8就不説了，这些问题做为常识自己解决。 然后就可以运行了，下面讲讲几个特别的环境问题。
+电脑只有cpu没有GPU怎么办 如果你电脑没有nvidia显卡没有安装cuda工具和cudnn请在主pom.xml里设置
+&lt;nd4j.backend&gt;nd4j-native-platform&lt;/nd4j.backend&gt;  如果你的电脑里有显示 卡，安装了cuda工具，则安对应的版本修改
+&lt;nd4j.backend&gt;nd4j-cuda-9.1-platform&lt;/nd4j.backend&gt;  假定你用的cpu，还有一个坑，用cpu也启动不了。你就要把对应pom.xml里的下列依赖去掉
+&lt;dependency&gt; &lt;groupId&gt;org.nd4j&lt;/groupId&gt; &lt;artifactId&gt;nd4j-cuda-8.0-platform&lt;/artifactId&gt; &lt;version&gt;${nd4j.version}&lt;/version&gt; &lt;/dependency&gt;  这些不同版本都要去掉，这样再启动，如果还有一个错误，就是没有mkl,这是最后一个坑。 请按图中设置启动参数
+-Djava.library.path  加上这个参数就可以。 <a class="read-more" href="http://www.art4ai.com/post/deeplearning4j_stp/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            <img class="author-thumb" src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/head.jpg" alt="Author image" nopin="nopin" />
+            
+            
+            
+            Lee
+                 
+        
+
+        
+        <time class="post-date" datetime="2018-04-29T18:54:40&#43;08:00">
+            29 Apr 2018
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="http://www.art4ai.com/post/bp_se/">神经网络之BP</a></h2>
     </header>
     <section class="post-excerpt">

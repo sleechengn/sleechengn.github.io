@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://www.art4ai.com/post/deeplearning4j_stp/</loc>
+    <lastmod>2018-04-29T18:54:40+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.art4ai.com/post/bp_se/</loc>
     <lastmod>2018-04-29T15:56:10+08:00</lastmod>
   </url>
@@ -19,7 +24,7 @@
   
   <url>
     <loc>http://www.art4ai.com/post/</loc>
-    <lastmod>2018-04-29T15:56:10+08:00</lastmod>
+    <lastmod>2018-04-29T18:54:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -30,7 +35,7 @@
   
   <url>
     <loc>http://www.art4ai.com/</loc>
-    <lastmod>2018-04-29T15:56:10+08:00</lastmod>
+    <lastmod>2018-04-29T18:54:40+08:00</lastmod>
     <priority>0</priority>
   </url>
   
