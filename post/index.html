@@ -185,7 +185,7 @@
 	
 	   <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="http://www.art4ai.com/post/scala-learning-pattern-matching/">神经网络入门</a></h2>
+        <h2 class="post-title"><a href="http://www.art4ai.com/post/bp_first/">神经网络入门</a></h2>
     </header>
     <section class="post-excerpt">
         
@@ -220,7 +220,7 @@ output = sigmoid(input)
 我们就要找差距，我们用(1,0) - (y1,y2)，相减后结果是(1-y1,0-y2)，这个就是差距，我们在几何里学过欧氏距离一个点到另一个点的距离公式: L = ((x1-x2)^2 + (y1-y2)^2)^1/2，这个不会说了吧，我们可以把我们的输出和希望的输出得出一个距离，这个距离就是输出和目标的差距离，我们用LOSS来表示，专业术语叫做损失。我们只要调整权重不断的减小这个损失，就可以能让网络更接近我们的目标。
 我们先来看一种笨办法，我们随机选一个权重，我们让它变大一点，计算出一个LOSS，让它变小一点计算出一个LOSS，两个LOSS比较一下，如果谁小就说明谁离调整的目标更近，就是有效的更新，如果通过暴力计算，我们对每个权重和偏执做调整， 。让LOSS变得最小，那么我们的函数就最接近我们的预期，比如我们输入人和输的图片，输出的点离(1,0)近，说明是人，离(0,1)近，说明是车。这样，我们就有一个识别网络。我们把调整参数，让LOSS最小的动作叫训练。
 　现在的问题成为，如何调整参数让：目标与输出距离缩小。不断调整参数让预期点与输出的点的距离缩小。
-　我们定义了LOSS，LOSS称为损失。 <a class="read-more" href="http://www.art4ai.com/post/scala-learning-pattern-matching/">&raquo;</a></p>
+　我们定义了LOSS，LOSS称为损失。 <a class="read-more" href="http://www.art4ai.com/post/bp_first/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
