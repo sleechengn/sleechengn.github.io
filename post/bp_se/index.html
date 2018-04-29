@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Bp_se"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Bp_se &middot; 人工智能艺术" />
+  	<meta property="og:site_name" content="人工智能艺术" />
+  	<meta property="og:url" content="http://www.art4ai.com/post/bp_se/" />
+
+    
+        
+            <meta property="og:image" content="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/color.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2018-04-29T15:56:10&#43;08:00" />
+
+    
+    
+
+    <title>Bp_se &middot; 人工智能艺术</title>
+
+    
+    <meta name="description" content="１、前置知识 阅读这篇文章时，假定你了解以下知识：
+1、神经网络输入输出的计算 2、损失函数 3、导数 　我觉得在这之前，你必须要把上面三个概念弄清楚，因为接下来的内容是以上面三个知识为基础的讲解，所以我们还是来复习一下上面三个知识点，如果你有不清楚的，可以看我另一篇文章或是其它博文。
+　神经网络不说了，如果你不清楚定" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="http://www.art4ai.com/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="http://www.art4ai.com/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="http://www.art4ai.com/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="http://www.art4ai.com/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="http://www.art4ai.com/index.xml" rel="alternate" type="application/rss+xml" title="人工智能艺术" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.40.1" />
+
+    <link rel="canonical" href="http://www.art4ai.com/post/bp_se/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": ,
+        "logo": http://www.art4ai.com/https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/head.jpg
+    },
+    "author": {
+        "@type": "Person",
+        "name": ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": http://www.art4ai.com/https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/head.jpg,
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": http://www.art4ai.com/,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": Bp_se,
+    "name": Bp_se,
+    "wordCount": 63,
+    "timeRequired": "PT1M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": en
+    },
+    "url": http://www.art4ai.com/post/bp_se/,
+    "datePublished": 2018-04-29T15:56Z,
+    "dateModified": 2018-04-29T15:56Z,
+    
+    
+    "description": ,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": http://www.art4ai.com/post/bp_se/
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="http://www.art4ai.com/meshow">关于</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="http://www.art4ai.com/">人工智能</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="http://www.art4ai.com/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="http://www.art4ai.com/"><img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/head.jpg" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Bp_se</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2018-04-29T15:56:10&#43;08:00">
+            Apr 29, 2018
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<h1 id="１-前置知识">１、前置知识</h1>
+
+<p>阅读这篇文章时，假定你了解以下知识：</p>
+
+<h2 id="1-神经网络输入输出的计算">1、神经网络输入输出的计算</h2>
+
+<h2 id="2-损失函数">2、损失函数</h2>
+
+<h2 id="3-导数">3、导数</h2>
+
+<p>　　我觉得在这之前，你必须要把上面三个概念弄清楚，因为接下来的内容是以上面三个知识为基础的讲解，所以我们还是来复习一下上面三个知识点，如果你有不清楚的，可以看我另一篇<a href="http://www.art4ai.com/post/bp_first/">文章</a>或是其它博文。</p>
+
+<p>　　神经网络不说了，如果你不清楚定义，可以点上面的链接看我的另一篇博文，当然你可以查资料，但是在读这篇博文的同时请你务必要搞清楚，下面还是说一下损失函数和导数吧。</p>
+
+<p>　　损失函数<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/loss.png" alt="image" />，我们回顾一下定义，其实就是网络的实际输出和你想要的输出之间的差距，是一个欧氏距离，这个你学过 几何应该知道怎么计算，也就是平方和，我们有一个专业名词叫L2范数。另外还有一个重要的概念就是，可以通过调整权重偏执等参数来使损失函数变小，我们现在所说的损失函数若没有说明，默认是指网络输出的一个N维的点和希望输出的目标点之间的距离。</p>
+
+<h1 id="2-导数">2、导数</h1>
+
+<p>　　我们看看导数吧，这个很重要，因为导数是关键，它是让网络往目标更新的关键，我不像其它博文那样讲，我用最直观的来讲，就从导数本身开始。我们先来看看导数的定义，从定义出发总是没有错的，对于一个曲线来说，导数是什么？</p>
+
+<p>　　我们以二维的曲线为例吧，对于一个连续的曲线来说，我们可以用一个函数来表示，假设我们令这个函数关系是：</p>
+
+<p><img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/y-equal-f(x).png" alt="image" /></p>
+
+<p>　　我们来看看导数的定义，对于某一个点(x0,y0)来说，在这个点的导数定义是：</p>
+
+<p><img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/20180324103333796.png" alt="image" /></p>
+
+<p>在
+<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/x0.png" alt="image" />
+处的导数定义</p>
+
+<p>　　最原始的导数定义，如果这个不会，你就去翻上学时的内容，对于我们来说，不难看出，<strong>导数就是该点的斜率；如果我们要通过改变<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/x0.png" alt="image" />的值让<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/fx0.png?" alt="image" />变小，我们必须把往导数反方向移动</strong>，这个动作可以写这样的赋值：</p>
+
+<p><img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/x0subfx0.png" alt="image" /></p>
+
+<p>　　参数说明</p>
+
+<p>　　　　　　　　　<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/step.png?d" alt="image" />代表移动的步长系数，一般很小，不能移太大，因为移太大可能一步移过了最低点</p>
+
+<p>　　　　　　　　<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/dfx0.png" alt="image" />代表在<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/x0.png" alt="image" />处的导数</p>
+
+<p>　　如果<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/dfx0gt0.png" alt="image" />，则往左移动<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/mvdelta.png" alt="image" />，右边竖线是导数的绝对值</p>
+
+<p>　　如果<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/dfx0lt0.png" alt="image" />，则往右移动<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/mvdelta.png" alt="image" />，右边竖线是导数的绝对值</p>
+
+<p>　　经过不断的计算导数然后不断的这样移动后，我们的<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/fx0.png" alt="image" />就不断的变小，直到<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/dfx0equal0.png" alt="image" />，无法再移动，这样<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/fx0.png" alt="image" />就达到了一个极小值。</p>
+
+<p>　　我们有了一个让<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/fx0.png" alt="image" />缩小的方法了，我们再来看看我们接下来重要的内容，我知道上面的可能对有人来说很基础，对有人来说却很困难，所以这个一定要确保能理解上面的方法，才能看下面的内容。</p>
+
+<p>　　我们来看看，在神经网络里，从通过类似上微小移动每个参数来改变<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/loss.png" alt="image" />。现在我们要讲方法，所以请务必把上面的东西看完并确保能完全理解，因为那是最基础的，所有后面的知识都基于上面的知识。</p>
+
+<p>　　我们找到了一个在连续曲线上找到较小值的方法，就是调整某个参数，按它的导数反向微小移动的方式。</p>
+
+<p>　　我们知道神经网络有权重还有偏执，我们这里用符号来表示，权重使用<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/w1.png?" alt="image" /> ,<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/w2.png?" alt="image" />,<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/w3.png?" alt="image" />,<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/w4.png?" alt="image" />,<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/w5.png?" alt="image" />,<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/wn.png?" alt="image" />,,,等来表示，偏执用<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/b1.png" alt="image" />,<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/b2.png" alt="image" />,<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/b3.png" alt="image" />,<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/b4.png" alt="image" />,<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/b5.png" alt="image" />,<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/bn.png" alt="image" />,,表示，我们这些都是网络中的参数，我们最终的目的是要<strong>调整这些参数的大小，让<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/loss.png" alt="image" />最小。</strong></p>
+
+<p>　　我们知道神经网络是一个从输入层输入一个数据，然后通过计算流程，最终输出一数据，再与目标数据计算出一个<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/loss.png" alt="image" />，我们一定要清楚这个，特别是<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/loss.png" alt="image" />不是输出数据，而是计算结果与期望目标的欧氏距离。那么，对于一个确定的固定的输入神经网络，<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/loss.png" alt="image" />的大小取决权重和偏执，调整其中一个权重，就意味着<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/loss.png" alt="image" />就会变化，那么同样的，我们根据导数的定义：调整其中一个权重<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/wn.png" alt="image" />使权重改变一个很小的<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/deltax.png" alt="image" />，调整以后<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/loss.png" alt="image" />就会改变，对应的<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/loss.png" alt="image" />有一个小的改变量，我们简写为<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/deltaloss.png" alt="image" />，那么根据导数的定义，我们可以得出：对于此刻的状态，损失对某个权重的导数可以表示为：</p>
+
+<p><img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/dloss.png" alt="image" /></p>
+
+<p>　　这个解释一下，就是移动一个参数后<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/loss.png" alt="image" />也会移动，两个的比值就是一个导数，也可当成斜率。</p>
+
+<p>　　这就是此刻状态<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/loss.png" alt="image" />对<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/wn.png" alt="image" />的导数，由于<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/wn.png" alt="image" />可以是任意一个权重，所以我们称以上式子为此刻<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/wn.png" alt="image" />的偏导数，这个是多 元函数里的定义，所以不要问为什么这么取名字，原因是有多个自变量，每个变量的导数就是偏导数。同理，我们可以求出<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/loss.png" alt="image" />对任意的某个权重或某个偏执的偏导数，因为你只要把这个参数移动改一个微小量，对比<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/loss.png" alt="image" />的变化量就行。这样我们从理论上可以计算<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/loss.png" alt="image" />对任意参数的偏导数了。</p>
+
+<p>　　还记得我们的曲线找最小值的方法吗，没错，你只要把参数值往偏导数反方向移动一个微小的值，也等于减小<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/loss.png" alt="image" />。</p>
+
+<h1 id="3-训练调整参数">3、训练调整参数</h1>
+
+<p>　　下面讲今天的主题，BP算法，也就是反向传播算法，它是干什么的，没错，它就是计算<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/loss.png" alt="image" />对每个参数的偏导数的，所以我们就来看看BP是怎么计算的，这里为了照顾入门的同学，我就不讲什么矩阵运算了，我们以例子来讲怎么计算偏导数。</p>
+
+<p>　　我们把loss的计算列成一个算式，在某次计算中：<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/loss.png" alt="image" /> = &hellip;&hellip;&hellip;，这里的省略号代表前面的计算流程，就是一堆数字和各种运算组合，由加法、乘法、平方、和Sigmoid函数组成，那么，我们如何求某个参数的偏导呢？我们就把这个参数设为变量x，不把它写成一个数字，比如把<img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/wn.png" alt="image" />写成自变量x，其它的所有参数都写成数字，于是我们就得到了一个只含有loss和x是变量的函数了，乘下的就是一元函数求导了，求loss对x的导数，求出导数以后，代入x值，就得到某参数的导数。</p>
+
+<p>　　我还是来一个简单的例子，假设一个简单的网络，loss展开后。</p>
+
+<pre><code class="language-math">loss = (1/(1+exp(-(w1*x1 + w2*x3 + w3 * x3)) - 1)
+</code></pre>
+
+<pre><code>  请注意了，x1,w1,w3,w3,w4，等在一个计算中都是已知的，我们把除了w1的其它都写成已知的数字：
+</code></pre>
+
+<pre><code class="language-math">loss = (1/(1+exp(-(w1*0.5+ 0.3*0.7 + 0.8*0.35)) - 1)
+</code></pre>
+
+<p>　　我们发现，函数成了一个只含有loss和w1的函数了，然后一元函数求导：dloss/dw1，懂了吧？然后计算出的导数代入w1值，计算然出一个导数值，同理把式子写成只含有w2的式子，计算出w2的导数，这样就可以计算任意参数的导数了。</p>
+
+<p>　　这样我们可以通过固定其它参数，把要求导数的参数写成自变量，就能求参数的偏导数了。哈哈，这下知道了吧，求参数偏导数，那么反向传播是什么？其实是因为求的是一个复合函数，所以求导要一层一层的求，还能回忆函数的导数求法吗？从最外层往里层求，对应网络是从后面朝向前面求的，所以叫反向传播。</p>
+
+<p>　　计算量大，优化我不说了，在反向传播里，要规划计算的路径，以最小的计算量来完成，因为参数很多，某些网络有数亿参数，所以这个优化问题要在你充分理解自己来总结。</p>
+
+<p>　　这下我们只需要每次前向计算一次，再反向计算一次各个参数的偏导数，我们更新一次参数就行了，这个过程就是训练，不断的调整参数减小loss，这里要提一下这个计算量非常大，所以要使用像GPU这种高速的并行，并行的问题有空我再讲讲，这里不提，简单的说就是分工计算，把能分工的计算任务给不同的独立计算提供者，我们不断的训练让loss变小再次变小，也就是loss对每个权重和偏执的导数接近0，不能再小为止，这样loss很小的情况下，网络就成了我们预期的样子，可以用来对图像分类了。</p>
+
+<p>　　</p>
+
+<p>　　有问题也欢迎加入深度学习与人工智能交流群，一起交流学习讨论，QQ群号码 374685750。谢谢大家的支持，我有时间会发更多的文章，谢谢大家的支持。</p>
+
+<p>　　本文可以转载，但是必须声明出处链接和说明；</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="http://www.art4ai.com/" style="background-image: url(https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/head.jpg)"><span class="hidden">Lee's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="http://www.art4ai.com/">Lee</a></h4>
+  
+  <p>Read <a href="http://www.art4ai.com/">more posts</a> by this author.</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Beijing, China</span>
+    <span class="author-link icon-link"><a href="http://www.art4ai.com/">http://www.art4ai.com/</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Bp_se&nbsp;-&nbsp;%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e8%89%ba%e6%9c%af&amp;url=http%3a%2f%2fwww.art4ai.com%2fpost%2fbp_se%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.art4ai.com%2fpost%2fbp_se%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=http%3a%2f%2fwww.art4ai.com%2fpost%2fbp_se%2f&amp;description=Bp_se"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2fwww.art4ai.com%2fpost%2fbp_se%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script>
+
+
+
+
+var disqus_config = function () {
+this.page.url = "http:\/\/www.art4ai.com\/post\/bp_se\/";  
+this.page.identifier = "http:\/\/www.art4ai.com\/post\/bp_se\/"; 
+};
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://Lee.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="http://www.art4ai.com/post/bp_first/">
+          <section class="post">
+              <h2>神经网络入门</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">人工智能艺术</a> All rights reserved - 2017</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="http://www.art4ai.com/js/jquery.js"></script>
+    <script type="text/javascript" src="http://www.art4ai.com/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="http://www.art4ai.com/js/index.js"></script>
+    
+</body>
+</html>
+
