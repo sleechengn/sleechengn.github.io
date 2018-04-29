@@ -39,7 +39,7 @@
     <title>Deepleaning4j简单介绍安装 &middot; 人工智能艺术</title>
 
     
-    <meta name="description" content="简介 *deeplearning4j*是一个基于jvm的机器学习框架，主要是应用于商业环境下的机器学习应用场景。为什么这样説呢？因为它提供了商业化环境下运行的支撑体系，比如GPU、Spark等的支持，一般来説对于理论验证来説是不需要spark这些的，所以它是为商业应用打造的，它的主要技术力量来自于一家美国的初创公司：s" />
+    <meta name="description" content="简介 deeplearning4j是一个基于jvm的机器学习框架，主要应用于商业环境下的机器学习应用场景。为什么这样説呢？因为它提供了商业化环境下运行的支撑体系，比如GPU、Spark等的支持，一般来説对于理论验证来説是不需要spark这些的，所以它是为商业应用打造的，它的主要维护机构来自于一家美国的初创公司：skym" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -102,7 +102,7 @@
     },
     "headline": Deepleaning4j简单介绍安装,
     "name": Deepleaning4j简单介绍安装,
-    "wordCount": 65,
+    "wordCount": 69,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
@@ -207,7 +207,7 @@
 
 <hr />
 
-<p>*deeplearning4j*是一个基于jvm的机器学习框架，主要是应用于商业环境下的机器学习应用场景。为什么这样説呢？因为它提供了商业化环境下运行的支撑体系，比如GPU、Spark等的支持，一般来説对于理论验证来説是不需要spark这些的，所以它是为商业应用打造的，它的主要技术力量来自于一家美国的初创公司：<strong>skymind</strong>.</p>
+<p><strong>deeplearning4j</strong>是一个基于jvm的机器学习框架，主要应用于商业环境下的机器学习应用场景。为什么这样説呢？因为它提供了商业化环境下运行的支撑体系，比如GPU、Spark等的支持，一般来説对于理论验证来説是不需要spark这些的，所以它是为商业应用打造的，它的主要维护机构来自于一家美国的初创公司：<strong>skymind</strong>.</p>
 
 <p>主页地址：<a href="http://www.deeplearning4j.org">http://www.deeplearning4j.org</a></p>
 
@@ -216,27 +216,30 @@
 <p>github:<a href="https://github.com/deeplearning4j">https://github.com/deeplearning4j</a></p>
 
 <p>安装前准备：
-- apache maven
-- java sdk1.8
-- eclipse/idea
-- git</p>
+* apache maven
+* java sdk1.8
+* eclipse/idea
+* git</p>
 
-<p>这些是你要安装的东西，maven主要用于项目管理依赖的库，主要是用于管理java的jar仓库，它让你能用方便的引入一个软件栈。</p>
+<p>以上这些是你需要安装的</p>
 
-<p>java不必説了，它的下载地址在orcle上，请自行下载。</p>
+<p>maven主要用于管理项目所依赖的库，用于管理java的jar仓库，它能让你方便的引入一个软件栈。</p>
 
-<p>eclipse/idea这个是开发工具，也就是ide，我们有一个好的开发工具会大大增加效率，因为我本人使用的是eclipse和idea，所以写的这个，java还有很多开发工具，这里就不一一説了。但是有一点要注意，ide必须支持maven项目管理。</p>
+<p>java不必説了，它的下载地址在oracle，请自行前往下载，注意版本。</p>
 
-<p>git是一个代码仓库工具，类似的还有svn，主要是代码管理用</p>
+<p>eclipse/idea是开发工具，也就是ide，一个好的开发工具会大大增加效率，因为本人使用的是eclipse和idea，java还有很多开发工具，这里就不一一说明了。但是有一点要注意，选用的ide必须支持maven管理依赖包，不然手动配置会很麻烦。</p>
+
+<p>git是一个代码维护工具，类似的还有svn，主要用于代码管理</p>
 
 <h2 id="安装java">安装java</h2>
 
-<p>请在oracle下载java sdk，注意下载的时候要1.8版本，虽然其它版本支持，但是不同的版本有一定的区别，所以这个最好1.8.</p>
+<p>请在oracle下载java sdk，注意下载1.8版本，虽然其它版本也许支持，但是不同的版本有一定的区别，为了少走弯路用1.8.</p>
 
-<h2 id="下载deeplearning4j实例">下载deeplearning4j实例</h2>
+<h2 id="下载deeplearning4j演示">下载deeplearning4j演示</h2>
 
-<p>github地址：<a href="https://github.com/deeplearning4j/dl4j-examples.git">https://github.com/deeplearning4j/dl4j-examples.git</a>
-将代码下载到本地解压。</p>
+<p>github地址：<a href="https://github.com/deeplearning4j/dl4j-examples.git">https://github.com/deeplearning4j/dl4j-examples.git</a></p>
+
+<p>将代码下载到本地。</p>
 
 <p>下面以idea为例讲一下如何导入运行</p>
 
@@ -254,8 +257,10 @@
 
 <p><img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/conf_maven_of.png" alt="image" /></p>
 
-<p>maven home一定要配置好，还有就是User setting files也可以指定为maven目录里的settings，因为这样可以使用自己定义的镜像。
-`</p>
+<p>maven home 一定要配置好,就是你maven所有的目录路径</p>
+
+<p>还有就是User setting，选override，指定maven目录下的conf/settings.xml
+因为这样可以使用自己定义的镜像，用阿里云挺快，所以可以使用阿里云的仓库。</p>
 
 <p><strong>阿里云：</strong></p>
 
@@ -267,7 +272,7 @@
     &lt;/mirror&gt;
 </code></pre>
 
-<p>这个可以加速你的下载，因为你在国内访问很慢所以用这个，这个配置就复制到settings.xml mirrors里面就行</p>
+<p>这个设置可以加速你的下载，因为你在国内访问中央仓库很慢，把这个配置就复制到settings.xml里的mirrors里面就行</p>
 
 <p>开始导入</p>
 
@@ -279,24 +284,24 @@
 
 <p><img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/ip.png" alt="image" /></p>
 
-<p>开始下载jar包了，这个要等一会儿，有的很慢，所以只要没断就等就好。</p>
+<p>开始下载jar包了，这个要等一会儿，只要没中断就等。</p>
 
 <p>在idea里配置java8就不説了，这些问题做为常识自己解决。
-然后就可以运行了，下面讲讲几个特别的环境问题。</p>
+然后就可以运行了，下面讲讲几个特别坑的环境问题。</p>
 
 <h3 id="电脑只有cpu没有gpu怎么办">电脑只有cpu没有GPU怎么办</h3>
 
-<p>如果你电脑没有nvidia显卡没有安装cuda工具和cudnn请在主pom.xml里设置</p>
+<p>如果你电脑没有nvidia显卡或者还没有安装cuda工具以及cudnn，那么请在主pom.xml里设置</p>
 
 <pre><code class="language-xml">&lt;nd4j.backend&gt;nd4j-native-platform&lt;/nd4j.backend&gt;
 </code></pre>
 
-<p>如果你的电脑里有显示 卡，安装了cuda工具，则安对应的版本修改</p>
+<p>如果你的电脑里有显示卡并安装了cuda工具，则按对应的版本修改</p>
 
 <pre><code class="language-xml">&lt;nd4j.backend&gt;nd4j-cuda-9.1-platform&lt;/nd4j.backend&gt;
 </code></pre>
 
-<p>假定你用的cpu，还有一个坑，用cpu也启动不了。你就要把对应pom.xml里的下列依赖去掉</p>
+<p>假定你用的cpu，还有一个坑，用cpu也启动不了。你要把对应pom.xml 里的下列依赖去掉</p>
 
 <pre><code class="language-xml">&lt;dependency&gt;
                 &lt;groupId&gt;org.nd4j&lt;/groupId&gt;
@@ -316,6 +321,10 @@
 </code></pre>
 
 <p>加上这个参数就可以。</p>
+
+<p>有问题也欢迎加入深度学习与人工智能交流群，一起交流学习讨论，QQ群号码 374685750。谢谢大家的支持，我有时间会发更多的文章，谢谢大家的支持。</p>
+
+<p>本文可以转载，但是必须声明出处链接和说明；</p>
 
     </section>
 
