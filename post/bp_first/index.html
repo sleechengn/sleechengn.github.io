@@ -105,7 +105,7 @@ $$ 1000*100*10" />
     },
     "headline": 神经网络入门,
     "name": 神经网络入门,
-    "wordCount": 115,
+    "wordCount": 107,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
@@ -237,10 +237,13 @@ $$ x_1-&gt;h_1 $$
 
 <p>h1的计算方法是：</p>
 
-<p>假定我们用$$ W_{x_ih_j} $$代表连接$$ x_1 $$和 $$ h_1 $$的权重，则h1的计算可以写为：
-$$ x<em>1w</em>{x_1h_1}+x<em>2w</em>{x_2h_1}+x<em>3w</em>{x_3h_1}+x<em>4w</em>{x_4h_1} $$
-本层神经元的输入定义：
-$$ h<em>j=\sum</em>{i=1}^{features}x<em>i*w</em>{x_ih_j} + bias_j $$
+<p>假定我们用$$ W_{x_ih_j} $$代表连接$$ x_1 $$和 $$ h_1 $$的权重，则h1的计算可以写为：</p>
+
+<p><img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/hidden_layer_h1_input_final.png" alt="image" /></p>
+
+<p>本层神经元的输入定义：</p>
+
+<p><img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/xMultiplyWplusB.png" alt="image" />
 这里说明一下，输入层神经元下标i,输出层下标j,这样就定入了神经元的净输入，根据上面的网络图再结合公式理解。其实就是一个加权求和的过程，注意bias代表神经元的偏执。</p>
 
 <p><strong>神经元的净输入</strong></p>
