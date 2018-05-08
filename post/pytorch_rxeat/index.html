@@ -12,15 +12,15 @@
 
 
 
-<meta name="twitter:title" content="线性代数知识"/>
+<meta name="twitter:title" content="Pytorch简介"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@"/>
 
 
 
-  	<meta property="og:title" content="线性代数知识 &middot; 人工智能艺术" />
+  	<meta property="og:title" content="Pytorch简介 &middot; 人工智能艺术" />
   	<meta property="og:site_name" content="人工智能艺术" />
-  	<meta property="og:url" content="http://www.art4ai.com/post/linear_x/" />
+  	<meta property="og:url" content="http://www.art4ai.com/post/pytorch_rxeat/" />
 
     
         
@@ -36,12 +36,12 @@
     
     
 
-    <title>线性代数知识 &middot; 人工智能艺术</title>
+    <title>Pytorch简介 &middot; 人工智能艺术</title>
 
     
-    <meta name="description" content=" 线代基础知识 对于机器学习来説，线性代数方便我们更好的理解，我们通过线性代数的方法更好的表示机器学习，这里线性代数指的是一些基本的线性代数内容，并不是高深的所有的内容。
-1、行列式 本章主要介绍n阶行列式的定义、性质、计算方法，此外还要讲解我n阶行列式计算n元线性方程组的克拉默法则。
-二阶与三阶行列式 二元线性方程组" />
+    <meta name="description" content=" Pytorch pytorch是一个张量前向运算、自动反向运算管理工具，对张量运算有很好的支持。
+安装方法 我们先打开网站：http://pytorch.org 选择你的环境，比如linux，pip，cuda9。 完成以后生成命令，你把命令拷贝在你的cmd里执行即安装。
+简单说明 pytorch是一个深度学习计算图构" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -65,7 +65,7 @@
     
     <meta name="generator" content="Hugo 0.40.2" />
 
-    <link rel="canonical" href="http://www.art4ai.com/post/linear_x/" />
+    <link rel="canonical" href="http://www.art4ai.com/post/pytorch_rxeat/" />
 
     
       
@@ -102,15 +102,15 @@
             
         ]
     },
-    "headline": 线性代数知识,
-    "name": 线性代数知识,
-    "wordCount": 48,
+    "headline": Pytorch简介,
+    "name": Pytorch简介,
+    "wordCount": 11,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
-    "url": http://www.art4ai.com/post/linear_x/,
+    "url": http://www.art4ai.com/post/pytorch_rxeat/,
     "datePublished": 2018-04-28T23:48Z,
     "dateModified": 2018-04-28T23:48Z,
     
@@ -118,7 +118,7 @@
     "description": ,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": http://www.art4ai.com/post/linear_x/
+        "@id": http://www.art4ai.com/post/pytorch_rxeat/
     }
 }
     </script>
@@ -184,7 +184,7 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">线性代数知识</h1>
+        <h1 class="post-title">Pytorch简介</h1>
         <small></small>
 
         <section class="post-meta">
@@ -200,38 +200,20 @@
     <section class="post-content">
       
 
-<h1 id="线代基础知识">线代基础知识</h1>
+<h1 id="pytorch">Pytorch</h1>
 
-<hr />
+<p>pytorch是一个张量前向运算、自动反向运算管理工具，对张量运算有很好的支持。</p>
 
-<p>对于机器学习来説，线性代数方便我们更好的理解，我们通过线性代数的方法更好的表示机器学习，这里线性代数指的是一些基本的线性代数内容，并不是高深的所有的内容。</p>
+<p><strong>安装方法</strong>
+我们先打开网站：<a href="http://pytorch.org">http://pytorch.org</a> 选择你的环境，比如linux，pip，cuda9。
+完成以后生成命令，你把命令拷贝在你的cmd里执行即安装。</p>
 
-<h2 id="1-行列式">1、行列式</h2>
+<p><strong>简单说明</strong>
+pytorch是一个深度学习计算图构建工具，它相对于tensorflow来说更灵活，为什么这样说呢，是因为它在构建计算图的时候是实时的，它记录变量的生命周期，即变量从什么操作得到，操作类型等。这非常重要，这样在进行自动微分的时候就能通过这种关系来计算，而tensorflow本身只是一张计算图，图的东西不可以更新，其实就是预先设计一个计算流程，然后再计算，这样导致了在计算过程需要改变计算图的时候是不能支持的。
+一般来说，研究人员选择pytorch验证，然后使用tensorflow打包模型服务。</p>
 
-<hr />
-
-<p>本章主要介绍n阶行列式的定义、性质、计算方法，此外还要讲解我n阶行列式计算n元线性方程组的克拉默法则。</p>
-
-<h3 id="二阶与三阶行列式">二阶与三阶行列式</h3>
-
-<p>二元线性方程组与二阶行列式：</p>
-
-<p>$$
-\left {
-\begin{array}{c}
-a_{11}x<em>1+a</em>{12}x_2=b<em>1 \
-a</em>{21}x<em>1+a</em>{22}x_2=b_2
-\end{array}
-\right.
-$$</p>
-
-<p>$$ \text {为了消去未知数} x<em>2 \text {,以} a</em>{22} \text{与}a_{12}\text{分别乘上列两方程的两端,然后两个方程相减,得} $$</p>
-
-<p>$$ (a<em>{11}a</em>{22} - a<em>{12}a</em>{21})x_1=b<em>1a</em>{22} - a_{12}b_2 $$</p>
-
-<p>$$ \text {类似地，消去} x_2 \text {，得} $$</p>
-
-<p>$$ (a<em>{12}a</em>{21} - a<em>{11}a</em>{22})x_2 = b<em>1a</em>{21} - a_{11}b_2 $$</p>
+<p><strong>资源</strong>
+pytorch文档：<a href="http://pytorch-cn.readthedocs.io">http://pytorch-cn.readthedocs.io</a></p>
 
 <script type="text/javascript"
    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
@@ -274,19 +256,19 @@ $$</p>
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e7%ba%bf%e6%80%a7%e4%bb%a3%e6%95%b0%e7%9f%a5%e8%af%86&nbsp;-&nbsp;%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e8%89%ba%e6%9c%af&amp;url=http%3a%2f%2fwww.art4ai.com%2fpost%2flinear_x%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Pytorch%e7%ae%80%e4%bb%8b&nbsp;-&nbsp;%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e8%89%ba%e6%9c%af&amp;url=http%3a%2f%2fwww.art4ai.com%2fpost%2fpytorch_rxeat%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.art4ai.com%2fpost%2flinear_x%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.art4ai.com%2fpost%2fpytorch_rxeat%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=http%3a%2f%2fwww.art4ai.com%2fpost%2flinear_x%2f&amp;description=%e7%ba%bf%e6%80%a7%e4%bb%a3%e6%95%b0%e7%9f%a5%e8%af%86"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=http%3a%2f%2fwww.art4ai.com%2fpost%2fpytorch_rxeat%2f&amp;description=Pytorch%e7%ae%80%e4%bb%8b"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2fwww.art4ai.com%2fpost%2flinear_x%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2fwww.art4ai.com%2fpost%2fpytorch_rxeat%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -303,8 +285,8 @@ $$</p>
 
 
 var disqus_config = function () {
-this.page.url = "http:\/\/www.art4ai.com\/post\/linear_x\/";  
-this.page.identifier = "http:\/\/www.art4ai.com\/post\/linear_x\/"; 
+this.page.url = "http:\/\/www.art4ai.com\/post\/pytorch_rxeat\/";  
+this.page.identifier = "http:\/\/www.art4ai.com\/post\/pytorch_rxeat\/"; 
 };
 
 (function() { 
@@ -331,13 +313,19 @@ s.setAttribute('data-timestamp', +new Date());
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="http://www.art4ai.com/post/bp_first/">
+      <a class="read-next-story" style="no-cover" href="http://www.art4ai.com/post/bp_se/">
           <section class="post">
-              <h2>神经网络入门</h2>
+              <h2>神经网络之BP</h2>
               
           </section>
       </a>
   
+  
+      <a class="read-next-story prev" style="no-cover" href="http://www.art4ai.com/post/bp_first/">
+          <section class="post">
+              <h2>神经网络入门</h2>
+          </section>
+      </a>
   
 </aside>
 

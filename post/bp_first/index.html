@@ -64,7 +64,7 @@ $$ 1000*100*10" />
       
       
     
-    <meta name="generator" content="Hugo 0.40.1" />
+    <meta name="generator" content="Hugo 0.40.2" />
 
     <link rel="canonical" href="http://www.art4ai.com/post/bp_first/" />
 
@@ -105,7 +105,7 @@ $$ 1000*100*10" />
     },
     "headline": 神经网络入门,
     "name": 神经网络入门,
-    "wordCount": 107,
+    "wordCount": 125,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
@@ -145,17 +145,7 @@ $$ 1000*100*10" />
         
             
             <li class="nav-opened" role="presentation">
-            	<a href="http://www.art4ai.com/post/deeplearning4j_stp">Dl4j安装</a>
-            </li>
-        
-            
-            <li class="nav-opened" role="presentation">
             	<a href="http://www.art4ai.com/post/bp_se">网络BP算法</a>
-            </li>
-        
-            
-            <li class="nav-opened" role="presentation">
-            	<a href="http://www.art4ai.com/post/bp_first">神经网络基础知识</a>
             </li>
         
         
@@ -224,12 +214,12 @@ $$ 1000*100*10" />
 <p>$$ 1000*100*10*5 $$</p>
 
 <p>图中每一条连接的线叫做<strong>权重</strong>，比如
-$$ x_1-&gt;h_1 $$
+$$ x1-&gt;h1$$
 这条线。</p>
 
 <p>我们表示:</p>
 
-<p>$$ W_{x_1h_1} $$</p>
+<p>$$ W<em>{x</em>{1}h_{1}}$$</p>
 
 <p>　　了解了这些以后，我们来看一下神经网络的计算</p>
 
@@ -237,13 +227,13 @@ $$ x_1-&gt;h_1 $$
 
 <p>h1的计算方法是：</p>
 
-<p>假定我们用$$ W_{x_ih_j} $$代表连接$$ x_1 $$和 $$ h_1 $$的权重，则h1的计算可以写为：</p>
+<p>假定我们用$$ W<em>{x</em>{i}h_{j}}$$代表连接$$ x_1 $$和 $$ h_1 $$的权重，则h1的计算可以写为：</p>
 
-<p><img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/hidden_layer_h1_input_final.png" alt="image" /></p>
+<p>$$ x<em>1 * w</em>{x_1h_1} + x<em>2 * w</em>{x_2h_1} + x<em>3 * w</em>{x_3h_1} + x<em>4 * w</em>{x_4h_1}$$</p>
 
 <p>本层神经元的输入定义：</p>
 
-<p><img src="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/xMultiplyWplusB.png" alt="image" />
+<p>$$ h<em>j=\sum</em>{i=1}^{features}x<em>i*w</em>{x_ih_j} + bias_j $$
 这里说明一下，输入层神经元下标i,输出层下标j,这样就定入了神经元的净输入，根据上面的网络图再结合公式理解。其实就是一个加权求和的过程，注意bias代表神经元的偏执。</p>
 
 <p><strong>神经元的净输入</strong></p>
@@ -416,9 +406,9 @@ s.setAttribute('data-timestamp', +new Date());
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="http://www.art4ai.com/post/bp_se/">
+      <a class="read-next-story" style="no-cover" href="http://www.art4ai.com/post/pytorch_rxeat/">
           <section class="post">
-              <h2>神经网络之BP</h2>
+              <h2>Pytorch简介</h2>
               
           </section>
       </a>
