@@ -86,11 +86,10 @@ $$\frac{dloss}{dw}$$
       <pubDate>Sat, 28 Apr 2018 23:48:13 +0800</pubDate>
       
       <guid>http://www.art4ai.com/post/pytorch_rxeat/</guid>
-      <description> Pytorch pytorch是一个张量前向运算、自动反向运算管理工具，对张量运算有很好的支持。
+      <description>Pytorch pytorch是一个张量前向运算、自动反向运算管理工具，对张量运算有很好的支持。
 安装方法 我们先打开网站：http://pytorch.org 选择你的环境，比如linux，pip，cuda9。 完成以后生成命令，你把命令拷贝在你的cmd里执行即安装。
 简单说明 pytorch是一个深度学习计算图构建工具，它相对于tensorflow来说更灵活，为什么这样说呢，是因为它在构建计算图的时候是实时的，它记录变量的生命周期，即变量从什么操作得到，操作类型等。这非常重要，这样在进行自动微分的时候就能通过这种关系来计算，而tensorflow本身只是一张计算图，图的东西不可以更新，其实就是预先设计一个计算流程，然后再计算，这样导致了在计算过程需要改变计算图的时候是不能支持的。 一般来说，研究人员选择pytorch验证，然后使用tensorflow打包模型服务。
-资源 pytorch文档：http://pytorch-cn.readthedocs.io
- </description>
+资源 pytorch文档：http://pytorch-cn.readthedocs.io</description>
     </item>
     
     <item>
@@ -127,15 +126,14 @@ $$ output = sigmoid(input) $$
       <pubDate>Sat, 28 Apr 2018 23:48:13 +0800</pubDate>
       
       <guid>http://www.art4ai.com/post/linear_x/</guid>
-      <description> 线代基础知识 对于机器学习来説，线性代数方便我们更好的理解，我们通过线性代数的方法更好的表示机器学习，这里线性代数指的是一些基本的线性代数内容，并不是高深的所有的内容。
+      <description>线代基础知识 对于机器学习来説，线性代数方便我们更好的理解，我们通过线性代数的方法更好的表示机器学习，这里线性代数指的是一些基本的线性代数内容，并不是高深的所有的内容。
 1、行列式 本章主要介绍n阶行列式的定义、性质、计算方法，此外还要讲解我n阶行列式计算n元线性方程组的克拉默法则。
 二阶与三阶行列式 二元线性方程组与二阶行列式：
 $$ \left { \begin{array}{c} a_{11}x1+a{12}x_2=b1 \ a{21}x1+a{22}x_2=b_2 \end{array} \right. $$
 $$ \text {为了消去未知数} x2 \text {,以} a{22} \text{与}a_{12}\text{分别乘上列两方程的两端,然后两个方程相减,得} $$
 $$ (a{11}a{22} - a{12}a{21})x_1=b1a{22} - a_{12}b_2 $$
 $$ \text {类似地，消去} x_2 \text {，得} $$
-$$ (a{12}a{21} - a{11}a{22})x_2 = b1a{21} - a_{11}b_2 $$
- </description>
+$$ (a{12}a{21} - a{11}a{22})x_2 = b1a{21} - a_{11}b_2 $$</description>
     </item>
     
   </channel>
