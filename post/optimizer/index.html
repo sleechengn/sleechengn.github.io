@@ -12,15 +12,15 @@
 
 
 
-<meta name="twitter:title" content="线性代数知识"/>
+<meta name="twitter:title" content="更新器简介"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@sleechengn@live.cn"/>
 
 
 
-  	<meta property="og:title" content="线性代数知识 &middot; 人工智能艺术" />
+  	<meta property="og:title" content="更新器简介 &middot; 人工智能艺术" />
   	<meta property="og:site_name" content="人工智能艺术" />
-  	<meta property="og:url" content="http://www.art4ai.com/post/linear_x/" />
+  	<meta property="og:url" content="http://www.art4ai.com/post/optimizer/" />
 
     
         
@@ -36,12 +36,12 @@
     
     
 
-    <title>线性代数知识 &middot; 人工智能艺术</title>
+    <title>更新器简介 &middot; 人工智能艺术</title>
 
     
-    <meta name="description" content="线代基础知识 对于机器学习来説，线性代数方便我们更好的理解，我们通过线性代数的方法更好的表示机器学习，这里线性代数指的是一些基本的线性代数内容，并不是高深的所有的内容。
-1、行列式 本章主要介绍n阶行列式的定义、性质、计算方法，此外还要讲解我n阶行列式计算n元线性方程组的克拉默法则。
-二阶与三阶行列式 二元线性方程组与" />
+    <meta name="description" content="更新器 更新器一个神经网络进行调节的策略，我们普通的SGD随机梯度下降会有很多局限，为了解决这些可以优化的问题引入多种策略，这些策略能加速神经网络的训练。
+我们也称更新器叫优化器。
+常用的更新器 * SGD 随机梯度下降 * MOMENT 动量 * Nesterov 牛顿下降 * Adamgrad * Adamdelt" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -65,7 +65,7 @@
     
     <meta name="generator" content="Hugo 0.40.2" />
 
-    <link rel="canonical" href="http://www.art4ai.com/post/linear_x/" />
+    <link rel="canonical" href="http://www.art4ai.com/post/optimizer/" />
 
     
       
@@ -102,15 +102,15 @@
             
         ]
     },
-    "headline": 线性代数知识,
-    "name": 线性代数知识,
-    "wordCount": 48,
+    "headline": 更新器简介,
+    "name": 更新器简介,
+    "wordCount": 24,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
-    "url": http://www.art4ai.com/post/linear_x/,
+    "url": http://www.art4ai.com/post/optimizer/,
     "datePublished": 2018-04-28T23:48Z,
     "dateModified": 2018-04-28T23:48Z,
     
@@ -118,7 +118,7 @@
     "description": ,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": http://www.art4ai.com/post/linear_x/
+        "@id": http://www.art4ai.com/post/optimizer/
     }
 }
     </script>
@@ -202,7 +202,7 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">线性代数知识</h1>
+        <h1 class="post-title">更新器简介</h1>
         <small></small>
 
         <section class="post-meta">
@@ -218,38 +218,25 @@
     <section class="post-content">
       
 
-<h1 id="线代基础知识">线代基础知识</h1>
+<h1 id="更新器">更新器</h1>
 
-<hr />
+<p>更新器一个神经网络进行调节的策略，我们普通的SGD随机梯度下降会有很多局限，为了解决这些可以优化的问题引入多种策略，这些策略能加速神经网络的训练。</p>
 
-<p>对于机器学习来説，线性代数方便我们更好的理解，我们通过线性代数的方法更好的表示机器学习，这里线性代数指的是一些基本的线性代数内容，并不是高深的所有的内容。</p>
+<p>我们也称更新器叫优化器。</p>
 
-<h2 id="1-行列式">1、行列式</h2>
+<p><strong>常用的更新器</strong>
+* SGD 随机梯度下降
+* MOMENT 动量
+* Nesterov 牛顿下降
+* Adamgrad
+* Adamdelta
+* RMSProp
+* Adam</p>
 
-<hr />
+<h2 id="sgd">SGD</h2>
 
-<p>本章主要介绍n阶行列式的定义、性质、计算方法，此外还要讲解我n阶行列式计算n元线性方程组的克拉默法则。</p>
-
-<h3 id="二阶与三阶行列式">二阶与三阶行列式</h3>
-
-<p>二元线性方程组与二阶行列式：</p>
-
-<p>$$
-\left {
-\begin{array}{c}
-a_{11}x<em>1+a</em>{12}x_2=b<em>1 \
-a</em>{21}x<em>1+a</em>{22}x_2=b_2
-\end{array}
-\right.
-$$</p>
-
-<p>$$ \text {为了消去未知数} x<em>2 \text {,以} a</em>{22} \text{与}a_{12}\text{分别乘上列两方程的两端,然后两个方程相减,得} $$</p>
-
-<p>$$ (a<em>{11}a</em>{22} - a<em>{12}a</em>{21})x_1=b<em>1a</em>{22} - a_{12}b_2 $$</p>
-
-<p>$$ \text {类似地，消去} x_2 \text {，得} $$</p>
-
-<p>$$ (a<em>{12}a</em>{21} - a<em>{11}a</em>{22})x_2 = b<em>1a</em>{21} - a_{11}b_2 $$</p>
+<p>这个是我们最常用的算法了，随机梯度下降，我们先来看一下梯度下降。
+普通的梯度下降是指我们一次性将所有的数据给网络，由网络反向计算loss对每个参数的偏导数，这个偏数对应的是所有的数据，所以这个梯度非常的准确。但是这样有一个问题就是当数据量大的时候不管是计算还是存储资源都会占用很大，这样使得我们很难训练神经网络参数，普通的GD对于小网络来说可以使用，对于大网络来说就不要去使用了，因为它的计算量非常大。</p>
 
     </section>
 
@@ -288,19 +275,19 @@ $$</p>
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e7%ba%bf%e6%80%a7%e4%bb%a3%e6%95%b0%e7%9f%a5%e8%af%86&nbsp;-&nbsp;%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e8%89%ba%e6%9c%af&amp;url=http%3a%2f%2fwww.art4ai.com%2fpost%2flinear_x%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e6%9b%b4%e6%96%b0%e5%99%a8%e7%ae%80%e4%bb%8b&nbsp;-&nbsp;%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd%e8%89%ba%e6%9c%af&amp;url=http%3a%2f%2fwww.art4ai.com%2fpost%2foptimizer%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.art4ai.com%2fpost%2flinear_x%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.art4ai.com%2fpost%2foptimizer%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=http%3a%2f%2fwww.art4ai.com%2fpost%2flinear_x%2f&amp;description=%e7%ba%bf%e6%80%a7%e4%bb%a3%e6%95%b0%e7%9f%a5%e8%af%86"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=http%3a%2f%2fwww.art4ai.com%2fpost%2foptimizer%2f&amp;description=%e6%9b%b4%e6%96%b0%e5%99%a8%e7%ae%80%e4%bb%8b"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2fwww.art4ai.com%2fpost%2flinear_x%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2fwww.art4ai.com%2fpost%2foptimizer%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -317,8 +304,8 @@ $$</p>
 
 
 var disqus_config = function () {
-this.page.url = "http:\/\/www.art4ai.com\/post\/linear_x\/";  
-this.page.identifier = "http:\/\/www.art4ai.com\/post\/linear_x\/"; 
+this.page.url = "http:\/\/www.art4ai.com\/post\/optimizer\/";  
+this.page.identifier = "http:\/\/www.art4ai.com\/post\/optimizer\/"; 
 };
 
 (function() { 
@@ -345,13 +332,19 @@ s.setAttribute('data-timestamp', +new Date());
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="http://www.art4ai.com/post/bp_first/">
+      <a class="read-next-story" style="no-cover" href="http://www.art4ai.com/post/pytorch_rxeat/">
           <section class="post">
-              <h2>神经网络入门</h2>
+              <h2>Pytorch简介</h2>
               
           </section>
       </a>
   
+  
+      <a class="read-next-story prev" style="no-cover" href="http://www.art4ai.com/post/bp_first/">
+          <section class="post">
+              <h2>神经网络入门</h2>
+          </section>
+      </a>
   
 </aside>
 
