@@ -98,9 +98,12 @@ $$\frac{dloss}{dw}$$
       <pubDate>Sat, 28 Apr 2018 23:48:13 +0800</pubDate>
       
       <guid>http://www.art4ai.com/post/tensorflow/</guid>
-      <description>Tensorflow &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tensorflow是一个Google推出的张量图计算工具，它并不是python编写的，只是支持python来调用它，所以tensorflow的性能是在大部分深度学习框架中比较快的，因为它的图模块运行在c++编写的引用模块中，它可以使用gpu进行运算，速度非常快
-安装方法 * 首先安装anaconda。（这个直接下载对应版本安装就可以）。 * 安装numpy，安装命令：pip install numpy * 安装tensorflow,命令：pip install tensorflow,当你是GPU支持时，pip install tensorflow-gpu来安装GPU版本，注意GPU版本要正常工作你必须安装cuda和cudnn工具，并且正确的设置，否则你的tensorflow可能不能正常运行。
-简单说明 Tensorflow是一个张量计算图工具，在tensorflow中，每个tensor都有一个op和op参与的依赖tensor，这样形成一个op图，op图是可以微分的，所以tensorflow优化器能够将所有的tensor的导数都求出来，优化器会通过导数来更新参数，进行优化。
+      <description>Tensorflow &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tensorflow是一个Google推出的张量图计算工具，它并不是python编写的，只是支持python来调用它，所以tensorflow的性能是在大部分深度学习框架中比较快的，因为它的图模块运行在c++编写的引用模块中，它可以使用gpu进行运算，速度非常快
+安装方法
+首先安装anaconda。 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;（这个直接下载对应版本安装就可以）。
+安装numpy &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;安装命令：pip install numpy
+安装tensorflow &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;命令：pip install tensorflow,当你是GPU支持时，pip install tensorflow-gpu来安装GPU版本，注意GPU版本要正常工作你必须安装cuda和cudnn工具，并且正确的设置，否则你的tensorflow可能不能正常运行。
+简单说明 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tensorflow是一个张量计算图工具，在tensorflow中，每个tensor都有一个op和op参与的依赖tensor，这样形成一个op图，op图是可以微分的，所以tensorflow优化器能够将所有的tensor的导数都求出来，优化器会通过导数来更新参数，进行优化。
 资源 anaconda: https://www.anaconda.com/</description>
     </item>
     
