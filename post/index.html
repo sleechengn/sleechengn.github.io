@@ -8,7 +8,7 @@
     
     <meta name="twitter:card" content="summary"/>
     
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/color.jpg"/>
+    <meta name="twitter:image" content="/images/qqgroup.jpg"/>
     
 
 
@@ -25,7 +25,7 @@
 
     
         
-            <meta property="og:image" content="https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/color.jpg"/>
+            <meta property="og:image" content="/images/qqgroup.jpg"/>
         
     
 
@@ -167,7 +167,7 @@
 
 
 	 
-  <header class="main-header tag-head" style="background-image: url(https://raw.githubusercontent.com/sleechengn/sleechengn.github.io/master/images/color.jpg)">
+  <header class="main-header tag-head" style="background-image: url(http://www.art4ai.com/images/qqgroup.jpg)">
   
 
     <nav class="main-nav overlay clearfix">
@@ -276,8 +276,7 @@ git是一个代码维护工具，类似的还有svn，主要用于代码管理
 　我们以二维的曲线为例吧，对于一个连续的曲线来说，我们可以用一个函数来表示，假设我们令这个函数关系是：
 $$ y=f(x)$$
 　我们来看看导数的定义，对于某一个点(x0,y0)来说，在这个点的导数定义是：
-$$ f&rsquo;(x0)=\lim{dx\to-0}\frac{f(x_0+d x) - f(x_0)}{d x} $$
-$$\text{在}x_0\text{处的导数定义}$$
+$$ \text{在}x_0\text{处的导数定义} $$
 　最原始的导数定义，如果这个不会，你就去翻上学时的内容，对于我们来说，不难看出，**导数就是该点的斜率； $$ \text{如果我们要通过改变} x_0 \text{的值让}f(x0) \text{变小，我们必须把}x0\text{往导数反方向移动}$$ 根据定义，这个动作可以写这样的赋值： $$x_0=x_0-step*f&rsquo;(x_0)$$
 　参数说明
 　step代表移动的步长系数，一般很小，不能移太大，因为移太大可能一步移过了最低点
@@ -292,7 +291,8 @@ $$\text{在}x_0\text{处的导数定义}$$
 　我们知道神经网络是一个从输入层输入一个数据，然后通过计算流程，最终输出一数据，再与目标数据计算出一个loss，我们一定要清楚这个，特别是loss不是输出数据，而是计算结果与期望目标的欧氏距离。那么，对于一个确定的固定的输入神经网络，LOSS的大小取决于权重和偏执，调整其中一个权重，就意味着LOSS就会变化，那么同样的，我们根据导数的定义：调整其中一个权重$$w_n$$使权重改变一个很小的$$dw$$，调整以后$$loss$$就会改变，对应的$$loss$$有一个小的改变量，我们简写为$$dloss$$，那么根据导数的定义，我们可以得出：对于此刻的状态，损失对某个权重的导数可以表示为：
 $$\frac{dloss}{dw}$$
 　这个解释一下，就是説移动一个参数后LOSS也会移动，两个的比值就是一个导数，也可当成斜率。
-　这就是此刻状态loss对wn的导数，由于wn可以是任意一个权重，所以我们称以上式子为此刻loss对wn的偏导数 $$ \frac {\partial loss}{\partial w_n}$$ 这个是函数里的定义，所以不要问为什么这么取名字，原因是有多个自变量，每个变量的导数就是偏导数。同理，我们可以求出loss对任意的某个权重或某个偏执的偏导数，因为你只要把这个参数移动改一个微小量，对比loss的变化量就行。这样我们从理论上可以计算loss对任意参数的偏导数了。 <a class="read-more" href="http://www.art4ai.com/post/bp_se/">&raquo;</a></p>
+　这就是此刻状态loss对wn的导数，由于wn可以是任意一个权重，所以我们称以上式子为此刻loss对wn的偏导数 $$ \frac {\partial loss}{\partial w_n}$$ 这个是函数里的定义，所以不要问为什么这么取名字，原因是有多个自变量，每个变量的导数就是偏导数。同理，我们可以求出loss对任意的某个权重或某个偏执的偏导数，因为你只要把这个参数移动改一个微小量，对比loss的变化量就行。这样我们从理论上可以计算loss对任意参数的偏导数了。
+　还记得我们的曲线找最小值的方法吗，没错，你只要把参数值往偏导数反方向移动一个微小的值，也等于减小loss。 <a class="read-more" href="http://www.art4ai.com/post/bp_se/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">
