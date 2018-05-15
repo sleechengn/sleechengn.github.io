@@ -474,13 +474,14 @@ $$\frac{dloss}{dw}$$
 SDG的更新方法：
 $$ \Delta_{\theta_t} = - \eta g_t $$
 Moment 动量是一常见的更新策略，在动量的帮助下，可以加速神经网络的收敛，可以有效的节省收敛时间，因为动量是累积的，所以可以很快的方式达到收敛。 公式：
-$$ vt=\mu v{t-1} + g_t $$
-update
-$$ \Delta_{\theta_t} = - \eta v_t $$
 参数说明：
 $$ \text{参数：} \mu \text{ 衰减系数} $$
 $$ \text{参数：} v_{t-1} \text{ 上一次的速度} $$
-$$ \text{参数：} g_t \text{ 梯度} $$ <a class="read-more" href="http://www.ml4ai.com/post/optimizer/">&raquo;</a></p>
+$$ \text{参数：} g_t \text{ 梯度} $$
+$$ \text{参数：} \eta \text{ 学习率} $$
+注意，衰减系数不能大于1，只能小于1，不能小于0。
+Nesterov 这个牛顿法则是比运量更进一步，它首先更新参数，然后再进行动量计算，这样以来我们收剑速度可能更快，而且可以收反馈。
+这种先更新，再来求梯度，然后再运量累积的做法实际上是加速二阶动量的方式，这种方法比动量在某些网络中表现更好。 <a class="read-more" href="http://www.ml4ai.com/post/optimizer/">&raquo;</a></p>
         
     </section>
     <footer class="post-meta">

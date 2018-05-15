@@ -109,7 +109,7 @@
     },
     "headline": 更新器简介,
     "name": 更新器简介,
-    "wordCount": 91,
+    "wordCount": 57,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
@@ -266,11 +266,7 @@
 <p>动量是一常见的更新策略，在动量的帮助下，可以加速神经网络的收敛，可以有效的节省收敛时间，因为动量是累积的，所以可以很快的方式达到收敛。
 公式：</p>
 
-<p>$$ v<em>t=\mu v</em>{t-1} + g_t $$</p>
-
-<p>update</p>
-
-<p>$$ \Delta_{\theta_t} = - \eta v_t $$</p>
+<p><img src="http://www.ml4ai.com/images/moment-update-x.png" alt="image" /></p>
 
 <p>参数说明：</p>
 
@@ -288,11 +284,7 @@
 
 <p>这个牛顿法则是比运量更进一步，它首先更新参数，然后再进行动量计算，这样以来我们收剑速度可能更快，而且可以收反馈。</p>
 
-<p>$$ g<em>t = \nabla</em>{\theta<em>{t-1}}f(\theta</em>{t-1}-\eta \mu v_{t-1}) $$</p>
-
-<p>$$ v<em>t=\mu v</em>{t-1} + g_t $$</p>
-
-<p>$$ \Delta_{\theta_t} = - \eta v_t $$</p>
+<p><img src="http://www.ml4ai.com/images/nesterov-update_x.png" alt="image" /></p>
 
 <p>这种先更新，再来求梯度，然后再运量累积的做法实际上是加速二阶动量的方式，这种方法比动量在某些网络中表现更好。</p>
 
