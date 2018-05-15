@@ -22,8 +22,11 @@
 主页地址：http://www.deeplearning4j.org
 中文说明：http://www.deeplearning4j.org/cn
 github:https://github.com/deeplearning4j
-安装前准备： * apache maven * java sdk1.8 * eclipse/idea * git
-以上这些是你需要安装的
+安装前准备： * apache maven
+ java sdk1.8
+ eclipse/idea
+ git
+  以上这些是你需要安装的
 maven主要用于管理项目所依赖的库，用于管理java的jar仓库，它能让你方便的引入一个软件栈。
 java不必説了，它的下载地址在oracle，请自行前往下载，注意版本。
 eclipse/idea是开发工具，也就是ide，一个好的开发工具会大大增加效率，因为本人使用的是eclipse和idea，java还有很多开发工具，这里就不一一说明了。但是有一点要注意，选用的ide必须支持maven管理依赖包，不然手动配置会很麻烦。
@@ -43,8 +46,7 @@ git是一个代码维护工具，类似的还有svn，主要用于代码管理
 电脑只有cpu没有GPU怎么办 如果你电脑没有nvidia显卡或者还没有安装cuda工具以及cudnn，那么请在主pom.xml里设置
 &amp;lt;nd4j.backend&amp;gt;nd4j-native-platform&amp;lt;/nd4j.backend&amp;gt;  如果你的电脑里有显示卡并安装了cuda工具，则按对应的版本修改
 &amp;lt;nd4j.backend&amp;gt;nd4j-cuda-9.1-platform&amp;lt;/nd4j.backend&amp;gt;  假定你用的cpu，还有一个坑，用cpu也启动不了。你要把对应pom.xml 里的下列依赖去掉
-&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.nd4j&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;nd4j-cuda-8.0-platform&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${nd4j.version}&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  这些不同版本都要去掉，这样再启动，如果还有一个错误，就是没有mkl,这是最后一个坑。 请按图中设置启动参数
--Djava.library.path  加上这个参数就可以。</description>
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.nd4j&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;nd4j-cuda-8.0-platform&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${nd4j.version}&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  这些不同版本都要去掉，这样再启动，如果还有一个错误，就是没有mkl,这是最后一个坑。 请按图中设置启动参数</description>
     </item>
     
     <item>
