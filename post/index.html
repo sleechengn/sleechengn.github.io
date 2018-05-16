@@ -1,473 +1,285 @@
 <!DOCTYPE html>
-<html lang="zh_CN">
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    
-    <meta name="twitter:card" content="summary"/>
-    
-    <meta name="twitter:image" content="/images/qqgroup.jpg"/>
-    
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Posts  &middot; 机器学习与人工智能</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
+<meta name="description" content="" />
 
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="Deeplearning And Artificial Intelligence"/>
-<meta name="twitter:site" content="@sleechengn"/>
-
+<meta name="keywords" content="">
 
 
-  	<meta property="og:title" content="Posts &middot; 深度学习与人工智能" />
-  	<meta property="og:site_name" content="深度学习与人工智能" />
-  	<meta property="og:url" content="http://www.ml4ai.com/post/" />
-
-    
-        
-            <meta property="og:image" content="/images/qqgroup.jpg"/>
-        
-    
-
-    
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="Deeplearning And Artificial Intelligence" />
-    
-
-    <title>Posts &middot; 深度学习与人工智能</title>
-
-    
-    <meta name="description" content="Deeplearning And Artificial Intelligence" />
-    
-
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="shortcut icon" href="http://www.ml4ai.com/images/favicon.ico">
-	  <link rel="apple-touch-icon" href="http://www.ml4ai.com/images/apple-touch-icon.png" />
-
-    <link rel="stylesheet" type="text/css" href="http://www.ml4ai.com/css/screen.css" />
-    <link rel="stylesheet" type="text/css" href="http://www.ml4ai.com/css/nav.css" />
-
-    
-
-    
-
-    
-      
-          <link href="http://www.ml4ai.com/index.xml" rel="alternate" type="application/rss+xml" title="深度学习与人工智能" />
-      
-      
-        <link href="http://www.ml4ai.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; 深度学习与人工智能" />
-      
-    
-    <meta name="generator" content="Hugo 0.40.1" />
-
-    <link rel="canonical" href="http://www.ml4ai.com/post/" />
-
-    
-      
-    
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "Website",
-    "publisher": {
-        "@type": "Person",
-        "name": ,
-        
-        "image": {
-            "@type": "ImageObject",
-            "url": http://www.ml4ai.com/http://www.ml4ai.com/images/head.jpg,
-            "width": 250,
-            "height": 250
-        },
-        
-        "url": http://www.ml4ai.com/,
-        "sameAs": [
-            
-            
-             
-             
-             
-             
-             
-            
-        ]
-    },
-    "url": http://www.ml4ai.com/,
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": http://www.ml4ai.com/
-    },
-    "description": Deeplearning And Artificial Intelligence
-}
-  </script>
-    
+<meta property="og:title" content="Posts  &middot; 机器学习与人工智能 ">
+<meta property="og:site_name" content="机器学习与人工智能"/>
+<meta property="og:url" content="http://www.ml4ai.com/post/" />
+<meta property="og:locale" content="zh-CN">
 
 
-    
+<meta property="og:type" content="website" />
 
-    
 
-    
 
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<link href="http://www.ml4ai.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts" />
+
+<link rel="canonical" href="http://www.ml4ai.com/post/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.ml4ai.com/touch-icon-144-precomposed.png">
+<link href="http://www.ml4ai.com/favicon.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.40.2" />
+
+  
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://www.ml4ai.comcss/font-awesome.min.css">
+<link rel="stylesheet" href="http://www.ml4ai.comcss/style.css">
+<link rel="stylesheet" href="http://www.ml4ai.comcss/highlight/default.css">
+
+  
+  
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'Your Google Analytics tracking code', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
 
 </head>
-<body class="nav-closed">
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="http://www.ml4ai.com">
+  foobar
 
-  <div class="nav">
-    <h3 class="nav-title">Menu</h3>
-    <a href="#" class="nav-close">
-        <span class="hidden">Close</span>
-    </a>
-    <ul>
-        
-        
-        
-            
-            <li class="nav-opened" role="presentation">
-            	<a href="http://www.ml4ai.com/post/deeplearning4j_stp">Dl4j安装</a>
-            </li>
-        
-            
-            <li class="nav-opened" role="presentation">
-            	<a href="http://www.ml4ai.com/post/pytorch_rxeat">Pytorch说明</a>
-            </li>
-        
-            
-            <li class="nav-opened" role="presentation">
-            	<a href="http://www.ml4ai.com/post/tensorflow">tensorflow说明</a>
-            </li>
-        
-            
-            <li class="nav-opened" role="presentation">
-            	<a href="http://www.ml4ai.com/post/bp_se">网络BP算法</a>
-            </li>
-        
-            
-            <li class="nav-opened" role="presentation">
-            	<a href="http://www.ml4ai.com/post/bp_first">神经网络基础知识</a>
-            </li>
-        
-        
-    </ul>
+</a>
 
-    
-    <a class="subscribe-button icon-feed" href="http://www.ml4ai.com/post/index.xml">Subscribe</a>
-    
 </div>
-<span class="nav-cover"></span>
+
+  
+<div class="container topline">
+  
+  few words about your site
 
 
- <div class="site-wrapper">
+</div>
 
 
+</div>
 
-
-	 
-  <header class="main-header tag-head" style="background-image: url(http://www.ml4ai.com/images/qqgroup.jpg)">
+  <nav class="container nav primary no-print">
   
 
-    <nav class="main-nav overlay clearfix">
-      
-        <a class="blog-logo" href="http://www.ml4ai.com/"><img src="http://www.ml4ai.com/images/head.jpg" alt="Home" /></a>
-      
-      
-          <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
-      
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">Posts</h1>
-            <h2 class="page-description">
-                
-            </h2>
-        </div>
-    </div>
+<a class="homelink" href="http://www.ml4ai.com">home</a>
+
+
+  
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" href="mailto:yourname@example.com">
+  <span class="fa fa-envelope-square"></span><span>email</span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" href="https://github.com/enten/hugo-boilerplate">
+  <span class="fa fa-github-square"></span><span>github</span></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a id="contact-link-rss" class="contact_link" href="http://www.ml4ai.com/post/index.xml" type="application/rss+xml">
+  <span class="fa fa-rss-square"></span><span>rss</span></a>
+
+
+
+</div>
+
+
+  
+
 </header>
 
-<main class="content" role="main">
+
+<section id="main-content" class="container main_content section">
+  <header class="container">
+    <h1>Posts
+</h1>
+
+  </header>
+  
+    <div class="container hat">
+  <h2><a href="http://www.ml4ai.com/2018/04/29/deepleaning4j%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E5%AE%89%E8%A3%85/">Deepleaning4j简单介绍安装
+</a>
+</h2>
+
+  <time datetime="2018-04-29">29 Apr, 2018</time>
+
+</div>
+
+
+  
+    <div class="container hat">
+  <h2><a href="http://www.ml4ai.com/2018/04/29/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B9%8Bbp/">神经网络之BP
+</a>
+</h2>
+
+  <time datetime="2018-04-29">29 Apr, 2018</time>
+
+</div>
+
+
+  
+    <div class="container hat">
+  <h2><a href="http://www.ml4ai.com/2018/04/28/pytorch%E7%AE%80%E4%BB%8B/">Pytorch简介
+</a>
+</h2>
+
+  <time datetime="2018-04-28">28 Apr, 2018</time>
+
+</div>
+
+
+  
+    <div class="container hat">
+  <h2><a href="http://www.ml4ai.com/2018/04/28/tensorflow/">tensorflow
+</a>
+</h2>
+
+  <time datetime="2018-04-28">28 Apr, 2018</time>
+
+</div>
+
+
+  
+    <div class="container hat">
+  <h2><a href="http://www.ml4ai.com/2018/04/28/%E6%9B%B4%E6%96%B0%E5%99%A8%E7%AE%80%E4%BB%8B/">更新器简介
+</a>
+</h2>
+
+  <time datetime="2018-04-28">28 Apr, 2018</time>
+
+</div>
+
+
+  
+    <div class="container hat">
+  <h2><a href="http://www.ml4ai.com/2018/04/28/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/">神经网络入门
+</a>
+</h2>
+
+  <time datetime="2018-04-28">28 Apr, 2018</time>
+
+</div>
+
+
+  
+    <div class="container hat">
+  <h2><a href="http://www.ml4ai.com/2018/04/28/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A5%E8%AF%86/">线性代数知识
+</a>
+</h2>
+
+  <time datetime="2018-04-28">28 Apr, 2018</time>
+
+</div>
+
+
+  
+  
+
+</section>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+
+  <a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  code with <i class='fa fa-heart'></i>
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  &copy; 2015 lee.
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
     
 
-	<div class="extra-pagination inner">
-    <nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 2</span>
-	
-	    <a class="older-posts" href="http://www.ml4ai.com/post/page/2/">Older Posts &rarr;</a>
-	
-</nav>
-
-	</div>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="http://www.ml4ai.com/post/deeplearning4j_stp/">Deepleaning4j简单介绍安装</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>简介 deeplearning4j是一个基于jvm的机器学习框架，主要应用于商业环境下的机器学习应用场景。为什么这样説呢？因为它提供了商业化环境下运行的支撑体系，比如GPU、Spark等的支持，一般来説对于理论验证来説是不需要spark这些的，所以它是为商业应用打造的，它的主要维护机构来自于一家美国的初创公司：skymind.
-主页地址：http://www.deeplearning4j.org
-中文说明：http://www.deeplearning4j.org/cn
-github:https://github.com/deeplearning4j
-安装前准备：
- apache maven
- java sdk1.8
- eclipse/idea
- git
-  以上这些是你需要安装的
-maven主要用于管理项目所依赖的库，用于管理java的jar仓库，它能让你方便的引入一个软件栈。
-java不必説了，它的下载地址在oracle，请自行前往下载，注意版本。
-eclipse/idea是开发工具，也就是ide，一个好的开发工具会大大增加效率，因为本人使用的是eclipse和idea，java还有很多开发工具，这里就不一一说明了。但是有一点要注意，选用的ide必须支持maven管理依赖包，不然手动配置会很麻烦。
-git是一个代码维护工具，类似的还有svn，主要用于代码管理
-安装java 请在oracle下载java sdk，注意下载1.8版本，虽然其它版本也许支持，但是不同的版本有一定的区别，为了少走弯路用1.8.
-下载deeplearning4j演示 github地址：https://github.com/deeplearning4j/dl4j-examples.git
-将代码下载到本地。
-下面以idea为例讲一下如何导入运行
-配置git 把git的路径配置好，不然git可能不能正常工作，后面不没有办法了。
-配置maven maven home 一定要配置好,就是你maven所有的目录路径
-还有就是User setting，选override，指定maven目录下的conf/settings.xml 因为这样可以使用自己定义的镜像，用阿里云挺快，所以可以使用阿里云的仓库。
-阿里云：
-&lt;mirror&gt; &lt;id&gt;alimaven&lt;/id&gt; &lt;name&gt;aliyun maven&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;/mirror&gt;  这个设置可以加速你的下载，因为你在国内访问中央仓库很慢，把这个配置就复制到settings.xml里的mirrors里面就行
-开始导入
-开始下载jar包了，这个要等一会儿，只要没中断就等。
-在idea里配置java8就不説了，这些问题做为常识自己解决。 然后就可以运行了，下面讲讲几个特别坑的环境问题。
-电脑只有cpu没有GPU怎么办 如果你电脑没有nvidia显卡或者还没有安装cuda工具以及cudnn，那么请在主pom.xml里设置
-&lt;nd4j.backend&gt;nd4j-native-platform&lt;/nd4j.backend&gt;  如果你的电脑里有显示卡并安装了cuda工具，则按对应的版本修改
-&lt;nd4j.backend&gt;nd4j-cuda-9.1-platform&lt;/nd4j.backend&gt;  假定你用的cpu，还有一个坑，用cpu也启动不了。你要把对应pom.xml 里的下列依赖去掉
-&lt;dependency&gt; &lt;groupId&gt;org.nd4j&lt;/groupId&gt; &lt;artifactId&gt;nd4j-cuda-8.0-platform&lt;/artifactId&gt; &lt;version&gt;${nd4j.version}&lt;/version&gt; &lt;/dependency&gt;  这些不同版本都要去掉，这样再启动，如果还有一个错误，就是没有mkl,这是最后一个坑。 请按图中设置启动参数 <a class="read-more" href="http://www.ml4ai.com/post/deeplearning4j_stp/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-            
-            
-
-            
-            <img class="author-thumb" src="http://www.ml4ai.com/images/head.jpg" alt="Author image" nopin="nopin" />
-            
-            
-            
-            Lee
-                 
-        
-
-        
-        <time class="post-date" datetime="2018-04-29T18:54:40&#43;08:00">
-            29 Apr 2018
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="http://www.ml4ai.com/post/bp_se/">神经网络之BP</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>１、前置知识 阅读这篇文章时，假定你了解以下知识：
-1、神经网络输入输出的计算 2、损失函数 3、导数 　我觉得在这之前，你必须要把上面三个概念弄清楚，因为接下来的内容是以上面三个知识为基础的讲解，所以我们还是来复习一下上面三个知识点，如果你有不清楚的，可以看我另一篇文章或是其它博文。
-　神经网络不说了，如果你不清楚定义，可以点上面的链接看我的另一篇博文，当然你可以查资料，但是在读这篇博文的同时请你务必要搞清楚，下面还是说一下损失函数和导数吧。
-　损失函数$$loss$$，我们回顾一下定义，其实就是网络的实际输出和你想要的输出之间的差距，是一个欧氏距离，这个你学过 几何应该知道怎么计算，也就是平方和，我们有一个专业名词叫L2范数。另外还有一个重要的概念就是，可以通过调整权重偏执等参数来使损失函数变小，我们现在所说的损失函数若没有说明，默认是指网络输出的一个N维的点和希望输出的目标点之间的距离。
-2、导数 　我们看看导数吧，这个很重要，因为导数是关键，它是让网络往目标更新的关键，我不像其它博文那样讲，我用最直观的来讲，就从导数本身开始。我们先来看看导数的定义，从定义出发总是没有错的，对于一个曲线来说，导数是什么？
-　我们以二维的曲线为例吧，对于一个连续的曲线来说，我们可以用一个函数来表示，假设我们令这个函数关系是：
-$$ y=f(x)$$
-　我们来看看导数的定义，对于某一个点(x0,y0)来说，在这个点的导数定义是：
-$$ \text{在}x_0\text{处的导数定义} $$
-　最原始的导数定义，如果这个不会，你就去翻上学时的内容，对于我们来说，不难看出，**导数就是该点的斜率； $$ \text{如果我们要通过改变} x_0 \text{的值让}f(x0) \text{变小，我们必须把}x0\text{往导数反方向移动}$$ 根据定义，这个动作可以写这样的赋值： $$x_0=x_0-step*f&rsquo;(x_0)$$
-　参数说明
-　step代表移动的步长系数，一般很小，不能移太大，因为移太大可能一步移过了最低点
-　f&rsquo;(x0)代表在x0处的导数
-　如果$$f&rsquo;(x_0)&gt;0$$，则往左移动$$step*|f&rsquo;(x_0)|$$，右边竖线是导数的绝对值
-　如果$$f&rsquo;(x_0)&lt;0$$，则往右移动$$step*|f&rsquo;(x_0)|$$，右边竖线是导数的绝对值
-　经过不断的计算导数然后不断的这样移动后，我们的f(x0)就不断的变小，直到让它成0，无法再移动，这样f(x0)就达到了一个极小值。
-　我们有了一个让f(x0)缩小的方法了，我们再来看看我们接下来重要的内容，我知道上面的可能对有人来说很基础，对有人来说却很困难，所以这个一定要确保能理解上面的方法，才能看下面的内容。
-　我们来看看，在神经网络里，从通过类似上微小移动每个参数来改变$$loss$$。现在我们要讲方法，所以请务必把上面的东西看完并确保能完全理解，因为那是最基础的，所有后面的知识都基于上面的知识。
-　我们找到了一个在连续曲线上找到较小值的方法，就是调整某个参数，按它的导数反向微小移动的方式。
-　我们知道神经网络有权重还有偏执，我们这里用符号来表示，权重使用$$w_1,w_2,w_3,w_4,w_5,w_n$$,,,等来表示，偏执用$$b_1,b_2,b_3,b_4,b_5,b_n$$,,表示，我们这些都是网络中的参数，我们最终的目的是要调整这些参数的大小，让$$ loss $$最小。
-　我们知道神经网络是一个从输入层输入一个数据，然后通过计算流程，最终输出一数据，再与目标数据计算出一个loss，我们一定要清楚这个，特别是loss不是输出数据，而是计算结果与期望目标的欧氏距离。那么，对于一个确定的固定的输入神经网络，LOSS的大小取决于权重和偏执，调整其中一个权重，就意味着LOSS就会变化，那么同样的，我们根据导数的定义：调整其中一个权重$$w_n$$使权重改变一个很小的$$dw$$，调整以后$$loss$$就会改变，对应的$$loss$$有一个小的改变量，我们简写为$$dloss$$，那么根据导数的定义，我们可以得出：对于此刻的状态，损失对某个权重的导数可以表示为：
-$$\frac{dloss}{dw}$$
-　这个解释一下，就是説移动一个参数后LOSS也会移动，两个的比值就是一个导数，也可当成斜率。
-　这就是此刻状态loss对wn的导数，由于wn可以是任意一个权重，所以我们称以上式子为此刻loss对wn的偏导数 $$ \frac {\partial loss}{\partial w_n}$$ 这个是函数里的定义，所以不要问为什么这么取名字，原因是有多个自变量，每个变量的导数就是偏导数。同理，我们可以求出loss对任意的某个权重或某个偏执的偏导数，因为你只要把这个参数移动改一个微小量，对比loss的变化量就行。这样我们从理论上可以计算loss对任意参数的偏导数了。
-　还记得我们的曲线找最小值的方法吗，没错，你只要把参数值往偏导数反方向移动一个微小的值，也等于减小loss。 <a class="read-more" href="http://www.ml4ai.com/post/bp_se/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-            
-            
-
-            
-            <img class="author-thumb" src="http://www.ml4ai.com/images/head.jpg" alt="Author image" nopin="nopin" />
-            
-            
-            
-            Lee
-                 
-        
-
-        
-        <time class="post-date" datetime="2018-04-29T15:56:10&#43;08:00">
-            29 Apr 2018
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="http://www.ml4ai.com/post/pytorch_rxeat/">Pytorch简介</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Pytorch pytorch是一个张量前向运算、自动反向运算管理工具，对张量运算有很好的支持。
-安装方法 我们先打开网站：http://pytorch.org 选择你的环境，比如linux，pip，cuda9。 完成以后生成命令，你把命令拷贝在你的cmd里执行即安装。
-简单说明 pytorch是一个深度学习计算图构建工具，它相对于tensorflow来说更灵活，为什么这样说呢，是因为它在构建计算图的时候是实时的，它记录变量的生命周期，即变量从什么操作得到，操作类型等。这非常重要，这样在进行自动微分的时候就能通过这种关系来计算，而tensorflow本身只是一张计算图，图的东西不可以更新，其实就是预先设计一个计算流程，然后再计算，这样导致了在计算过程需要改变计算图的时候是不能支持的。 一般来说，研究人员选择pytorch验证，然后使用tensorflow打包模型服务。
-资源 pytorch文档：http://pytorch-cn.readthedocs.io <a class="read-more" href="http://www.ml4ai.com/post/pytorch_rxeat/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-            
-            
-
-            
-            <img class="author-thumb" src="http://www.ml4ai.com/images/head.jpg" alt="Author image" nopin="nopin" />
-            
-            
-            
-            Lee
-                 
-        
-
-        
-        <time class="post-date" datetime="2018-04-28T23:48:13&#43;08:00">
-            28 Apr 2018
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="http://www.ml4ai.com/post/tensorflow/">tensorflow</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>Tensorflow &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tensorflow是一个Google推出的张量图计算工具，它并不是python编写的，只是支持python来调用它，所以tensorflow的性能是在大部分深度学习框架中比较快的，因为它的图模块运行在c++编写的引用模块中，它可以使用gpu进行运算，速度非常快
-安装方法
-首先安装anaconda。 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（这个直接下载对应版本安装就可以）。
-安装numpy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;安装命令：pip install numpy
-安装tensorflow &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;命令：pip install tensorflow,当你是GPU支持时，pip install tensorflow-gpu来安装GPU版本，注意GPU版本要正常工作你必须安装cuda和cudnn工具，并且正确的设置，否则你的tensorflow可能不能正常运行。
-简单说明 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tensorflow是一个张量计算图工具，在tensorflow中，每个tensor都有一个op和op参与的依赖tensor，这样形成一个op图，op图是可以微分的，所以tensorflow优化器能够将所有的tensor的导数都求出来，优化器会通过导数来更新参数，进行优化。
-资源 anaconda: https://www.anaconda.com/ <a class="read-more" href="http://www.ml4ai.com/post/tensorflow/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-            
-            
-
-            
-            <img class="author-thumb" src="http://www.ml4ai.com/images/head.jpg" alt="Author image" nopin="nopin" />
-            
-            
-            
-            Lee
-                 
-        
-
-        
-        <time class="post-date" datetime="2018-04-28T23:48:13&#43;08:00">
-            28 Apr 2018
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="http://www.ml4ai.com/post/optimizer/">更新器简介</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>更新器 更新器一个神经网络进行调节的策略，我们普通的SGD随机梯度下降会有很多局限，为了解决这些可以优化的问题引入多种策略，这些策略能加速神经网络的训练。
-我们也称更新器叫优化器。
-常用的更新器
- 1、SGD 随机梯度下降
- 2、MOMENT 动量
- 3、Nesterov 牛顿下降
- 4、Adamgrad
- 5、Adamdelta
- 6、RMSProp
- 7、Adam
-  SGD 这个是我们最常用的算法了，随机梯度下降，我们先来看一下梯度下降。 普通的梯度下降是指我们一次性将所有的数据给网络，由网络反向计算loss对每个参数的偏导数，这个偏数对应的是所有的数据，所以这个梯度非常的准确。但是这样有一个问题就是当数据量大的时候不管是计算还是存储资源都会占用很大，这样使得我们很难训练神经网络参数，普通的GD对于小网络来说可以使用，对于大网络来说就不要去使用了，因为它的计算量非常大。
-SDG的更新方法：
-$$ \Delta_{\theta_t} = - \eta g_t $$
-Moment 动量是一常见的更新策略，在动量的帮助下，可以加速神经网络的收敛，可以有效的节省收敛时间，因为动量是累积的，所以可以很快的方式达到收敛。 公式：
-参数说明：
-$$ \text{参数：} \mu \text{ 衰减系数} $$
-$$ \text{参数：} v_{t-1} \text{ 上一次的速度} $$
-$$ \text{参数：} g_t \text{ 梯度} $$
-$$ \text{参数：} \eta \text{ 学习率} $$
-注意，衰减系数不能大于1，只能小于1，不能小于0。
-Nesterov 这个牛顿法则是比运量更进一步，它首先更新参数，然后再进行动量计算，这样以来我们收剑速度可能更快，而且可以收反馈。
-这种先更新，再来求梯度，然后再运量累积的做法实际上是加速二阶动量的方式，这种方法比动量在某些网络中表现更好。 <a class="read-more" href="http://www.ml4ai.com/post/optimizer/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-            
-            
-
-            
-            <img class="author-thumb" src="http://www.ml4ai.com/images/head.jpg" alt="Author image" nopin="nopin" />
-            
-            
-            
-            Lee
-                 
-        
-
-        
-        <time class="post-date" datetime="2018-04-28T23:48:13&#43;08:00">
-            28 Apr 2018
-        </time>
-    </footer>
-</article>
-
-	
-
-	<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 2</span>
-	
-	    <a class="older-posts" href="http://www.ml4ai.com/post/page/2/">Older Posts &rarr;</a>
-	
-</nav>
-
-</main>
-
-
-
-    </div>
-    <script type="text/javascript" src="http://www.ml4ai.com/js/jquery.js"></script>
-    <script type="text/javascript" src="http://www.ml4ai.com/js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="http://www.ml4ai.com/js/index.js"></script>
+<script type="text/javascript">
+  (function() {
     
-</body>
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//your_disqus_shortname.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="http://www.ml4ai.comjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    
+  </body>
 </html>
+

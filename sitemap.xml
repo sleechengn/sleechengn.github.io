@@ -3,43 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www.ml4ai.com/post/deeplearning4j_stp/</loc>
+    <loc>http://www.ml4ai.com/2018/04/29/deepleaning4j%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2018-04-29T18:54:40+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ml4ai.com/post/bp_se/</loc>
+    <loc>http://www.ml4ai.com/2018/04/29/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B9%8Bbp/</loc>
     <lastmod>2018-04-29T15:56:10+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ml4ai.com/post/pytorch_rxeat/</loc>
+    <loc>http://www.ml4ai.com/2018/04/28/pytorch%E7%AE%80%E4%BB%8B/</loc>
     <lastmod>2018-04-28T23:48:13+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ml4ai.com/post/tensorflow/</loc>
+    <loc>http://www.ml4ai.com/2018/04/28/tensorflow/</loc>
     <lastmod>2018-04-28T23:48:13+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ml4ai.com/post/optimizer/</loc>
+    <loc>http://www.ml4ai.com/2018/04/28/%E6%9B%B4%E6%96%B0%E5%99%A8%E7%AE%80%E4%BB%8B/</loc>
     <lastmod>2018-04-28T23:48:13+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ml4ai.com/post/bp_first/</loc>
+    <loc>http://www.ml4ai.com/2018/04/28/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/</loc>
     <lastmod>2018-04-28T23:48:13+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.ml4ai.com/post/linear_x/</loc>
+    <loc>http://www.ml4ai.com/2018/04/28/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A5%E8%AF%86/</loc>
     <lastmod>2018-04-28T23:48:13+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.ml4ai.com/categories/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -50,6 +45,11 @@
   
   <url>
     <loc>http://www.ml4ai.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.ml4ai.com/topics/</loc>
     <priority>0</priority>
   </url>
   
