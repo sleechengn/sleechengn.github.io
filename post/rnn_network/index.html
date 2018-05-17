@@ -12,15 +12,15 @@
 
 
 
-<meta name="twitter:title" content="Pytorch简介"/>
+<meta name="twitter:title" content="Recurrent Neural Network"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@sleechengn"/>
 
 
 
-  	<meta property="og:title" content="Pytorch简介 &middot; 深度学习与人工智能" />
+  	<meta property="og:title" content="Recurrent Neural Network &middot; 深度学习与人工智能" />
   	<meta property="og:site_name" content="深度学习与人工智能" />
-  	<meta property="og:url" content="http://www.ml4ai.com/post/pytorch_rxeat/" />
+  	<meta property="og:url" content="http://www.ml4ai.com/post/rnn_network/" />
 
     
         
@@ -36,12 +36,16 @@
     
     
 
-    <title>Pytorch简介 &middot; 深度学习与人工智能</title>
+    <title>Recurrent Neural Network &middot; 深度学习与人工智能</title>
 
     
-    <meta name="description" content="Pytorch pytorch是一个张量前向运算、自动反向运算管理工具，对张量运算有很好的支持。
-安装方法 我们先打开网站：http://pytorch.org 选择你的环境，比如linux，pip，cuda9。 完成以后生成命令，你把命令拷贝在你的cmd里执行即安装。
-简单说明 pytorch是一个深度学习计算图构建" />
+    <meta name="description" content="循环神经网络 循环网络是一种序列识别模型，在RNN中，我们可以使它来进行各种序列的数学分类、回归操作。
+循环网络
+ 1、RNN
+ 2、双向RNN
+ 3、LSTM
+ 4、EncoderDecoder
+  1、RNN  计算公式  $$ h_t = output_t = \sigma(xtU&#43;h{t-1}W&#43;bias) $" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -65,7 +69,7 @@
     
     <meta name="generator" content="Hugo 0.40.2" />
 
-    <link rel="canonical" href="http://www.ml4ai.com/post/pytorch_rxeat/" />
+    <link rel="canonical" href="http://www.ml4ai.com/post/rnn_network/" />
 
     
       
@@ -102,15 +106,15 @@
             
         ]
     },
-    "headline": Pytorch简介,
-    "name": Pytorch简介,
-    "wordCount": 11,
+    "headline": Recurrent Neural Network,
+    "name": Recurrent Neural Network,
+    "wordCount": 33,
     "timeRequired": "PT1M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
-    "url": http://www.ml4ai.com/post/pytorch_rxeat/,
+    "url": http://www.ml4ai.com/post/rnn_network/,
     "datePublished": 2018-04-28T23:48Z,
     "dateModified": 2018-04-28T23:48Z,
     
@@ -118,7 +122,7 @@
     "description": ,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": http://www.ml4ai.com/post/pytorch_rxeat/
+        "@id": http://www.ml4ai.com/post/rnn_network/
     }
 }
     </script>
@@ -207,7 +211,7 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">Pytorch简介</h1>
+        <h1 class="post-title">Recurrent Neural Network</h1>
         <small></small>
 
         <section class="post-meta">
@@ -223,20 +227,48 @@
     <section class="post-content">
       
 
-<h1 id="pytorch">Pytorch</h1>
+<h1 id="循环神经网络">循环神经网络</h1>
 
-<p>pytorch是一个张量前向运算、自动反向运算管理工具，对张量运算有很好的支持。</p>
+<p>循环网络是一种序列识别模型，在RNN中，我们可以使它来进行各种序列的数学分类、回归操作。</p>
 
-<p><strong>安装方法</strong>
-我们先打开网站：<a href="http://pytorch.org">http://pytorch.org</a> 选择你的环境，比如linux，pip，cuda9。
-完成以后生成命令，你把命令拷贝在你的cmd里执行即安装。</p>
+<p><strong>循环网络</strong></p>
 
-<p><strong>简单说明</strong>
-pytorch是一个深度学习计算图构建工具，它相对于tensorflow来说更灵活，为什么这样说呢，是因为它在构建计算图的时候是实时的，它记录变量的生命周期，即变量从什么操作得到，操作类型等。这非常重要，这样在进行自动微分的时候就能通过这种关系来计算，而tensorflow本身只是一张计算图，图的东西不可以更新，其实就是预先设计一个计算流程，然后再计算，这样导致了在计算过程需要改变计算图的时候是不能支持的。
-一般来说，研究人员选择pytorch验证，然后使用tensorflow打包模型服务。</p>
+<ul>
+<li><p>1、RNN</p></li>
 
-<p><strong>资源</strong>
-pytorch文档：<a href="http://pytorch-cn.readthedocs.io">http://pytorch-cn.readthedocs.io</a></p>
+<li><p>2、双向RNN</p></li>
+
+<li><p>3、LSTM</p></li>
+
+<li><p>4、EncoderDecoder</p></li>
+</ul>
+
+<h2 id="1-rnn">1、RNN</h2>
+
+<ul>
+<li>计算公式</li>
+</ul>
+
+<p>$$ h_t = output_t = \sigma(x<em>tU+h</em>{t-1}W+bias) $$</p>
+
+<p>这里指的是一个RNN的计算图，我们对比发现，RNN的输出计算比一般网络的净输出多出了一此东西，也就是hidden state，它这样的结果就会与历史相关。我们通过这样的途径，可以很好的实现序列模型。</p>
+
+<p>当前我们的</p>
+
+<p>$$h_{0}$$</p>
+
+<p>可以是任意的张量，并非要由全0元素的tensor.</p>
+
+<p>伪代码</p>
+
+<pre><code class="language-py">
+def rnn(x):
+    output,s = acitve(x)
+    hidden = s
+    return output,hidden
+</code></pre>
+
+<p>active方法首先将样本乘以U矩阵，再将state乘w矩阵，然后相加，再加上bias，最后非线性激活。</p>
 
     </section>
 
@@ -275,19 +307,19 @@ pytorch文档：<a href="http://pytorch-cn.readthedocs.io">http://pytorch-cn.rea
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Pytorch%e7%ae%80%e4%bb%8b&nbsp;-&nbsp;%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0%e4%b8%8e%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd&amp;url=http%3a%2f%2fwww.ml4ai.com%2fpost%2fpytorch_rxeat%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Recurrent%20Neural%20Network&nbsp;-&nbsp;%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0%e4%b8%8e%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd&amp;url=http%3a%2f%2fwww.ml4ai.com%2fpost%2frnn_network%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.ml4ai.com%2fpost%2fpytorch_rxeat%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.ml4ai.com%2fpost%2frnn_network%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=http%3a%2f%2fwww.ml4ai.com%2fpost%2fpytorch_rxeat%2f&amp;description=Pytorch%e7%ae%80%e4%bb%8b"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=http%3a%2f%2fwww.ml4ai.com%2fpost%2frnn_network%2f&amp;description=Recurrent%20Neural%20Network"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2fwww.ml4ai.com%2fpost%2fpytorch_rxeat%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2fwww.ml4ai.com%2fpost%2frnn_network%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -304,8 +336,8 @@ pytorch文档：<a href="http://pytorch-cn.readthedocs.io">http://pytorch-cn.rea
 
 
 var disqus_config = function () {
-this.page.url = "http:\/\/www.ml4ai.com\/post\/pytorch_rxeat\/";  
-this.page.identifier = "http:\/\/www.ml4ai.com\/post\/pytorch_rxeat\/"; 
+this.page.url = "http:\/\/www.ml4ai.com\/post\/rnn_network\/";  
+this.page.identifier = "http:\/\/www.ml4ai.com\/post\/rnn_network\/"; 
 };
 
 (function() { 
@@ -332,17 +364,17 @@ s.setAttribute('data-timestamp', +new Date());
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="http://www.ml4ai.com/post/bp_se/">
+      <a class="read-next-story" style="no-cover" href="http://www.ml4ai.com/post/pytorch_rxeat/">
           <section class="post">
-              <h2>神经网络之BP</h2>
+              <h2>Pytorch简介</h2>
               
           </section>
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="http://www.ml4ai.com/post/rnn_network/">
+      <a class="read-next-story prev" style="no-cover" href="http://www.ml4ai.com/post/tensorflow/">
           <section class="post">
-              <h2>Recurrent Neural Network</h2>
+              <h2>tensorflow</h2>
           </section>
       </a>
   
