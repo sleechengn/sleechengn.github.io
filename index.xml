@@ -113,7 +113,14 @@ $$\frac{dloss}{dw}$$
 $$h_{0}$$
 可以是任意的张量，并非要由全0元素的tensor.
 伪代码
-def rnn(x): output,s = acitve(x) hidden = s return output,hidden  active方法首先将样本乘以U矩阵，再将state乘w矩阵，然后相加，再加上bias，最后非线性激活。</description>
+def rnn(x): output,s = acitve(x) hidden = s return output,hidden  active方法首先将样本乘以U矩阵，再将state乘w矩阵，然后相加，再加上bias，最后非线性激活。我承认active方法比较难写，图是最直观的，但是图的话没有好的画图工具，所以还是请参考上面的公式。
+特别要注意的一点是
+$$ x_t $$
+是timestep中的一个时间点，我们的x的形状是
+[batch_size,timestep,features] [ [ [1,2,3,4,5], [6,7,8,9,0] ], [ [1,2,3,4,4], [1,2,3,1,89] ] ] shape of [2*2*5]   第一个维度是batch_size，意在多个样本
+ 第二个维度是timestep，代表一个样本的不同timestep
+ 第三个维度是一个timestep中一个周期中一个时间点数据
+  这个是一个3D Tensor,我们假定我们都是用tensor来表示数据的话。</description>
     </item>
     
     <item>
@@ -129,6 +136,18 @@ def rnn(x): output,s = acitve(x) hidden = s return output,hidden  active方法�
 安装tensorflow &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;命令：pip install tensorflow,当你是GPU支持时，pip install tensorflow-gpu来安装GPU版本，注意GPU版本要正常工作你必须安装cuda和cudnn工具，并且正确的设置，否则你的tensorflow可能不能正常运行。
 简单说明 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tensorflow是一个张量计算图工具，在tensorflow中，每个tensor都有一个op和op参与的依赖tensor，这样形成一个op图，op图是可以微分的，所以tensorflow优化器能够将所有的tensor的导数都求出来，优化器会通过导数来更新参数，进行优化。
 资源 anaconda: https://www.anaconda.com/</description>
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>http://www.ml4ai.com/post/about/</link>
+      <pubDate>Sat, 28 Apr 2018 23:48:13 +0800</pubDate>
+      
+      <guid>http://www.ml4ai.com/post/about/</guid>
+      <description>ML4AI 关于ML4AI 网站：www.ml4ai.com 代码: https://gitee.com/sleechengn/ml4ai
+这是一个基于JVM的机器学习工具箱，支持计算图，支持GPU，还在不断完成各种张量操作，它可以自动微分，使你专注于设计网络而不必考虑反向计算。
+旨在开发一个通用的计算图工具，通过java。我们有很多java开发者要转入深度学习很多同学都要重新学习python这种语言，然而python语言编写的程序不易于java程序开发者进行调用，所以开发一个基于java的工具非常必要。
+如果你也想加入，请联系作者：邮箱 sleechengn@163.com</description>
     </item>
     
     <item>
