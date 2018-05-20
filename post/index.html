@@ -68,15 +68,33 @@
     
 
 	
-	  <img src="/images/head.jpg" class="sidebarphoto">
+	  <img src="http://www.ml4ai.com/images/head.jpg" class="sidebarphoto">
 	
 
-    <h1 class="brand-title">Machine Learning For Artificial Intelligence</h1>
-    <h2 class="brand-tagline">Lee</h2>
+    <h1 class="brand-title">深度学习人工智能</h1>
+    <h2 class="brand-tagline">Machine Learning For Artificial Intelligence</h2>
 
     <nav class="nav">
       <ul class="nav-list">
         <li class="nav-item"><span class="nav-item-separator">//</span><a href="http://www.ml4ai.com/">Home</a></li>
+        
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/bp_se/">BP误差计算简介</a></li>
+        
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/deeplearning4j_stp/">DEEPLEARNING4J安装指南</a></li>
+        
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/pytorch_introduce/">PYTORCH简单说明</a></li>
+        
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/tensorflow/">Tensorflow简单说明</a></li>
+        
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/about/">关于</a></li>
+        
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/rnn_network/">循环网络</a></li>
+        
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/optimizer/">更新器、优化器</a></li>
+        
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/bp_first/">神经网络与BP简介</a></li>
+        
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/linear_x/">线性代数</a></li>
         
       </ul>
     </nav>
@@ -268,7 +286,7 @@ $$ Y=net(X) $$
             <header class="post-header">
             
             <h1 class="post-title">
-              <a href="/post/pytorch_rxeat/">Pytorch</a>
+              <a href="/post/pytorch_introduce/">Pytorch安装指南</a>
             </h1>
             </header>
             <p class="post-meta">
@@ -585,6 +603,66 @@ shape of [2*2*5]
 <p><img src="http://www.ml4ai.com/images/nesterov-update_x.png" alt="image" /></p>
 
 <p>这种先更新，再来求梯度，然后再运量累积的做法实际上是加速二阶动量的方式，这种方法比动量在某些网络中表现更好。</p>
+
+            
+          </section>
+        
+          <section  class="post">
+            <header class="post-header">
+            
+            <h1 class="post-title">
+              <a href="/post/linear_x/">线性代数知识</a>
+            </h1>
+            </header>
+            <p class="post-meta">
+            	
+		          <span class="post-date">
+		            <span class="post-date-day"><sup>28</sup></span><span class="post-date-separator">/</span><span class="post-date-month">Apr</span> <span class="post-date-year">2018</span>
+		          </span>
+      				
+      				
+      					
+      				
+              
+                <span class="post-reading-time"><i class="fa fa-clock-o"></i> <em>1 min. read</em></span>
+              
+      				
+            </p>
+            
+              
+
+<h1 id="线代基础知识">线代基础知识</h1>
+
+<hr />
+
+<p>对于机器学习来説，线性代数方便我们更好的理解，我们通过线性代数的方法更好的表示机器学习，这里线性代数指的是一些基本的线性代数内容，并不是高深的所有的内容。</p>
+
+<h2 id="1-行列式">1、行列式</h2>
+
+<hr />
+
+<p>本章主要介绍n阶行列式的定义、性质、计算方法，此外还要讲解我n阶行列式计算n元线性方程组的克拉默法则。</p>
+
+<h3 id="二阶与三阶行列式">二阶与三阶行列式</h3>
+
+<p>二元线性方程组与二阶行列式：</p>
+
+<p>$$
+\left {
+\begin{array}{c}
+a_{11}x<em>1+a</em>{12}x_2=b<em>1 \
+a</em>{21}x<em>1+a</em>{22}x_2=b_2
+\end{array}
+\right.
+$$</p>
+
+<p>$$ \text {为了消去未知数} x<em>2 \text {,以} a</em>{22} \text{与}a_{12}\text{分别乘上列两方程的两端,然后两个方程相减,得} $$</p>
+
+<p>$$ (a<em>{11}a</em>{22} - a<em>{12}a</em>{21})x_1=b<em>1a</em>{22} - a_{12}b_2 $$</p>
+
+<p>$$ \text {类似地，消去} x_2 \text {，得} $$</p>
+
+<p>$$ (a<em>{12}a</em>{21} - a<em>{11}a</em>{22})x_2 = b<em>1a</em>{21} - a_{11}b_2 $$</p>
 
             
           </section>

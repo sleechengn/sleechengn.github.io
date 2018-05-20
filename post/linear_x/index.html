@@ -1,227 +1,160 @@
 <!DOCTYPE html>
-<html lang="zh_CN">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
+  <title>
+    线性代数知识 // 深度学习 人工智能
+  </title>
 
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    
-    
-        <meta name="twitter:card" content="summary"/>
-    
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-<meta name="twitter:title" content="线性代数知识"/>
-<meta name="twitter:description" content=""/>
-<meta name="twitter:site" content="@sleechengn"/>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="generator" content="Hugo 0.40.1" />
+
+  <meta property="og:title" content="线性代数知识" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:url" content="http://www.ml4ai.com/post/linear_x/" />
 
 
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.5.0/base-min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.5.0/pure-min.css">
+  
+  
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.5.0/grids-responsive-min.css">
+  
+  
 
-  	<meta property="og:title" content="线性代数知识 &middot; 深度学习与人工智能" />
-  	<meta property="og:site_name" content="深度学习与人工智能" />
-  	<meta property="og:url" content="http://www.ml4ai.com/post/linear_x/" />
+  <link rel="stylesheet" href="http://www.ml4ai.com//css/redlounge.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,200,100,700,300,500,600,800' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
 
-    
-        
-            <meta property="og:image" content="/images/qqgroup.jpg"/>
-        
-    
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png">
 
-    
-    <meta property="og:description" content="" />
-  	<meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2018-04-28T23:48:13&#43;08:00" />
-
-    
-    
-
-    <title>线性代数知识 &middot; 深度学习与人工智能</title>
-
-    
-    <meta name="description" content="线代基础知识 对于机器学习来説，线性代数方便我们更好的理解，我们通过线性代数的方法更好的表示机器学习，这里线性代数指的是一些基本的线性代数内容，并不是高深的所有的内容。
-1、行列式 本章主要介绍n阶行列式的定义、性质、计算方法，此外还要讲解我n阶行列式计算n元线性方程组的克拉默法则。
-二阶与三阶行列式 二元线性方程组与" />
-    
-
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="shortcut icon" href="http://www.ml4ai.com/images/favicon.ico">
-	  <link rel="apple-touch-icon" href="http://www.ml4ai.com/images/apple-touch-icon.png" />
-
-    <link rel="stylesheet" type="text/css" href="http://www.ml4ai.com/css/screen.css" />
-    <link rel="stylesheet" type="text/css" href="http://www.ml4ai.com/css/nav.css" />
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="深度学习 人工智能" />
 
     
-
-    
-
-    
-      
-          <link href="http://www.ml4ai.com/index.xml" rel="alternate" type="application/rss+xml" title="深度学习与人工智能" />
-      
-      
-    
-    <meta name="generator" content="Hugo 0.40.2" />
-
-    <link rel="canonical" href="http://www.ml4ai.com/post/linear_x/" />
-
-    
-      
-    
-    <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "publisher": {
-        "@type": "Organization",
-        "name": ,
-        "logo": http://www.ml4ai.com/http://www.ml4ai.com/images/head.jpg
-    },
-    "author": {
-        "@type": "Person",
-        "name": ,
-        
-        "image": {
-            "@type": "ImageObject",
-            "url": http://www.ml4ai.com/http://www.ml4ai.com/images/head.jpg,
-            "width": 250,
-            "height": 250
-        }, 
-        
-        "url": http://www.ml4ai.com/,
-        "sameAs": [
-            
-            
-             
-             
-             
-             
-             
-            
-        ]
-    },
-    "headline": 线性代数知识,
-    "name": 线性代数知识,
-    "wordCount": 48,
-    "timeRequired": "PT1M",
-    "inLanguage": {
-      "@type": "Language",
-      "alternateName": en
-    },
-    "url": http://www.ml4ai.com/post/linear_x/,
-    "datePublished": 2018-04-28T23:48Z,
-    "dateModified": 2018-04-28T23:48Z,
-    
-    
-    "description": ,
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": http://www.ml4ai.com/post/linear_x/
-    }
-}
-    </script>
-    
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/tomorrow-night-bright.min.css">
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 
 
-    
+  
 
-    
+  
 
-    
+  
 
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
+  
 </head>
-<body class="nav-closed">
 
-  <div class="nav">
-    <h3 class="nav-title">Menu</h3>
-    <a href="#" class="nav-close">
-        <span class="hidden">Close</span>
-    </a>
-    <ul>
+<body>
+	
+
+	<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+  <div class="header">
+    
+
+	
+	  <img src="http://www.ml4ai.com/images/head.jpg" class="sidebarphoto">
+	
+
+    <h1 class="brand-title">深度学习人工智能</h1>
+    <h2 class="brand-tagline">Machine Learning For Artificial Intelligence</h2>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item"><span class="nav-item-separator">//</span><a href="http://www.ml4ai.com/">Home</a></li>
         
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/bp_se/">BP误差计算简介</a></li>
         
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/deeplearning4j_stp/">DEEPLEARNING4J安装指南</a></li>
         
-            
-            <li class="nav-opened" role="presentation">
-            	<a href="http://www.ml4ai.com/post/deeplearning4j_stp">Dl4j安装</a>
-            </li>
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/pytorch_introduce/">PYTORCH简单说明</a></li>
         
-            
-            <li class="nav-opened" role="presentation">
-            	<a href="http://www.ml4ai.com/post/pytorch_rxeat">Pytorch说明</a>
-            </li>
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/tensorflow/">Tensorflow简单说明</a></li>
         
-            
-            <li class="nav-opened" role="presentation">
-            	<a href="http://www.ml4ai.com/post/tensorflow">tensorflow说明</a>
-            </li>
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/about/">关于</a></li>
         
-            
-            <li class="nav-opened" role="presentation">
-            	<a href="http://www.ml4ai.com/post/bp_se">网络BP算法</a>
-            </li>
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/rnn_network/">循环网络</a></li>
         
-            
-            <li class="nav-opened" role="presentation">
-            	<a href="http://www.ml4ai.com/post/bp_first">神经网络基础知识</a>
-            </li>
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/optimizer/">更新器、优化器</a></li>
         
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/bp_first/">神经网络与BP简介</a></li>
         
-    </ul>
+          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/post/linear_x/">线性代数</a></li>
+        
+      </ul>
+    </nav>
 
     
-    <a class="subscribe-button icon-feed" href="http://www.ml4ai.com/index.xml">Subscribe</a>
-    
+
+  </div>
 </div>
-<span class="nav-cover"></span>
 
+	
+	
 
- <div class="site-wrapper">
+    <div class="content pure-u-1 pure-u-md-3-4">
+		<a name="top"></a>
+		
 
+		
+			
+		    <div id="toc" class="pure-u-1 pure-u-md-1-4">
+				<small class="toc-label">Contents</small>
+		   	 	<nav id="TableOfContents">
+<ul>
+<li><a href="#线代基础知识">线代基础知识</a>
+<ul>
+<li><a href="#1-行列式">1、行列式</a>
+<ul>
+<li><a href="#二阶与三阶行列式">二阶与三阶行列式</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+		    </div>
+		    
+	    
+  		<section class="post">
+            <h1 class="post-title">
+              <a href="/post/linear_x/">线性代数知识</a>
+            </h1>
+            <h3 class="post-subtitle">
+            	
+            </h3>
+            
+            	<span class="post-date">
+                	<span class="post-date-day"><sup>28</sup></span><span class="post-date-separator">/</span><span class="post-date-month">Apr</span> <span class="post-date-year">2018</span>
+            	</span>
+            	
+            
+            	
+            
 
+			
+			
 
-<header class="main-header post-head no-cover">
-  <nav class="main-nav clearfix">
+			
 
+			
 
-  
-      <a class="blog-logo" href="http://www.ml4ai.com/"><img src="http://www.ml4ai.com/images/head.jpg" alt="Home" /></a>
-  
-  
-      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
-  
-  </nav>
-</header>
-
-
-
-<main class="content" role="main">
-
-
-
-
-  <article class="post post">
-
-    <header class="post-header">
-        <h1 class="post-title">线性代数知识</h1>
-        <small></small>
-
-        <section class="post-meta">
-        
-          <time class="post-date" datetime="2018-04-28T23:48:13&#43;08:00">
-            Apr 28, 2018
-          </time>
-        
-         
-        </section>
-    </header>
-
-    <section class="post-content">
-      
+            
 
 <h1 id="线代基础知识">线代基础知识</h1>
 
@@ -256,117 +189,45 @@ $$</p>
 
 <p>$$ (a<em>{12}a</em>{21} - a<em>{11}a</em>{22})x_2 = b<em>1a</em>{21} - a_{11}b_2 $$</p>
 
-    </section>
+	
+			
 
+			
 
-  <footer class="post-footer">
+			
+				<div class="paging">
+					<span class="paging-label">More Reading</span>
+					
+					<div class="paging-newer">
+						<span class="dark-red">Newer</span><span class="decorative-marker">//</span>
+						<a class="paging-link" href="/post/optimizer/">更新器、优化器</a>
+		            </div>
+		            
 
-
-    
-
-
-
-
-
-
-
-
-<figure class="author-image">
-    <a class="img" href="http://www.ml4ai.com/" style="background-image: url(/images/head.jpg)"><span class="hidden">Lee's Picture</span></a>
-</figure>
-
-
-<section class="author">
-  <h4><a href="http://www.ml4ai.com/">Lee</a></h4>
-  
-  <p>Read <a href="http://www.ml4ai.com/">more posts</a> by this author.</p>
-  
-  <div class="author-meta">
-    <span class="author-location icon-location">Beijing, China</span>
-    <span class="author-link icon-link"><a href="http://www.ml4ai.com/">http://www.ml4ai.com/</a></span>
-  </div>
-</section>
-
-
-
-
-    
-<section class="share">
-  <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e7%ba%bf%e6%80%a7%e4%bb%a3%e6%95%b0%e7%9f%a5%e8%af%86&nbsp;-&nbsp;%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0%e4%b8%8e%e4%ba%ba%e5%b7%a5%e6%99%ba%e8%83%bd&amp;url=http%3a%2f%2fwww.ml4ai.com%2fpost%2flinear_x%2f"
-      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-      <span class="hidden">Twitter</span>
-  </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fwww.ml4ai.com%2fpost%2flinear_x%2f"
-      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-      <span class="hidden">Facebook</span>
-  </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=http%3a%2f%2fwww.ml4ai.com%2fpost%2flinear_x%2f&amp;description=%e7%ba%bf%e6%80%a7%e4%bb%a3%e6%95%b0%e7%9f%a5%e8%af%86"
-      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
-      <span class="hidden">Pinterest</span>
-  </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2fwww.ml4ai.com%2fpost%2flinear_x%2f"
-     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-      <span class="hidden">Google+</span>
-  </a>
-</section>
-
-
-
-    
-
-<div id="disqus_thread"></div>
-<script>
-
-
-
-
-var disqus_config = function () {
-this.page.url = "http:\/\/www.ml4ai.com\/post\/linear_x\/";  
-this.page.identifier = "http:\/\/www.ml4ai.com\/post\/linear_x\/"; 
-};
-
-(function() { 
-var d = document, s = d.createElement('script');
-s.src = 'https://Lee.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
-
-
-
-
-
-
-  </footer>
-</article>
-
-</main>
-
-
-  <aside class="read-next">
-  
-      <a class="read-next-story" style="no-cover" href="http://www.ml4ai.com/post/bp_first/">
-          <section class="post">
-              <h2>神经网络入门</h2>
-              
+					
+	            </div>
+            
           </section>
-      </a>
-  
-  
-</aside>
+          
+          	
+          
+        
+      <div class="footer">
+	<hr class="thin" />
+	<div class="pure-menu pure-menu-horizontal pure-menu-open">
+		<ul class="footer-menu">
+		
+		</ul>
+	</div>
 
-
-
+	<p>&copy; 2018. All rights reserved.</p>
+</div>
     </div>
-    <script type="text/javascript" src="http://www.ml4ai.com/js/jquery.js"></script>
-    <script type="text/javascript" src="http://www.ml4ai.com/js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="http://www.ml4ai.com/js/index.js"></script>
-    
+  </div>
+	
+
+	
+
+  
 </body>
 </html>
-
