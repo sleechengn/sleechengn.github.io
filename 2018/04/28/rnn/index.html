@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>tensorflow  &middot; 人工智能-深度学习</title>
+  <title>rnn  &middot; 人工智能-深度学习</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -17,9 +17,9 @@
 <meta name="keywords" content="">
 
 
-<meta property="og:title" content="tensorflow  &middot; 人工智能-深度学习 ">
+<meta property="og:title" content="rnn  &middot; 人工智能-深度学习 ">
 <meta property="og:site_name" content="人工智能-深度学习"/>
-<meta property="og:url" content="http://www.ml4ai.com/2018/04/28/tensorflow/" />
+<meta property="og:url" content="http://www.ml4ai.com/2018/04/28/rnn/" />
 <meta property="og:locale" content="en-EN">
 
 
@@ -36,20 +36,20 @@
   {
     "@context": "http://schema.org",
     "@type": "Article",
-    "headline": "tensorflow",
+    "headline": "rnn",
     "author": {
       "@type": "Person",
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2018-04-28",
     "description": "",
-    "wordCount": 20
+    "wordCount": 57
   }
 </script>
 
 
 
-<link rel="canonical" href="http://www.ml4ai.com/2018/04/28/tensorflow/" />
+<link rel="canonical" href="http://www.ml4ai.com/2018/04/28/rnn/" />
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.ml4ai.com/touch-icon-144-precomposed.png">
 <link href="http://www.ml4ai.com/favicon.png" rel="icon">
@@ -162,7 +162,7 @@
 
 <article id="main-content" class="container main_content single">
   <header class="container hat">
-  <h1>tensorflow
+  <h1>rnn
 </h1>
 
   <div class="metas">
@@ -171,7 +171,7 @@
 
   
   &middot; Read in about 1 min
-  &middot; (20 Words)
+  &middot; (57 Words)
   <br>
   
 
@@ -183,29 +183,82 @@
   <div class="container content">
   
 
-<h1 id="tensorflow">Tensorflow</h1>
+<h1 id="循环神经网络">循环神经网络</h1>
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tensorflow是一个Google推出的张量图计算工具，它并不是python编写的，只是支持python来调用它，所以tensorflow的性能是在大部分深度学习框架中比较快的，因为它的图模块运行在c++编写的引用模块中，它可以使用gpu进行运算，速度非常快</p>
+<p>循环网络是一种序列识别模型，在RNN中，我们可以使它来进行各种序列的数学分类、回归操作。</p>
 
-<p><strong>安装方法</strong></p>
+<p><strong>循环网络</strong></p>
 
-<h4 id="首先安装anaconda">首先安装anaconda。</h4>
+<ul>
+<li><p>1、RNN</p></li>
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（这个直接下载对应版本安装就可以）。</p>
+<li><p>2、双向RNN</p></li>
 
-<h4 id="安装numpy">安装numpy</h4>
+<li><p>3、LSTM</p></li>
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;安装命令：pip install numpy</p>
+<li><p>4、EncoderDecoder</p></li>
+</ul>
 
-<h4 id="安装tensorflow">安装tensorflow</h4>
+<h2 id="1-rnn">1、RNN</h2>
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;命令：pip install tensorflow,当你是GPU支持时，pip install tensorflow-gpu来安装GPU版本，注意GPU版本要正常工作你必须安装cuda和cudnn工具，并且正确的设置，否则你的tensorflow可能不能正常运行。</p>
+<ul>
+<li>计算公式</li>
+</ul>
 
-<p><strong>简单说明</strong>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tensorflow是一个张量计算图工具，在tensorflow中，每个tensor都有一个op和op参与的依赖tensor，这样形成一个op图，op图是可以微分的，所以tensorflow优化器能够将所有的tensor的导数都求出来，优化器会通过导数来更新参数，进行优化。</p>
+<p>$$ h_t = output_t = \sigma(x<em>tU+h</em>{t-1}W+bias) $$</p>
 
-<p><strong>资源</strong>
-anaconda: <a href="https://www.anaconda.com/">https://www.anaconda.com/</a></p>
+<p>这里指的是一个RNN的计算图，我们对比发现，RNN的输出计算比一般网络的净输出多出了一此东西，也就是hidden state，它这样的结果就会与历史相关。我们通过这样的途径，可以很好的实现序列模型。</p>
+
+<p>当前我们的</p>
+
+<p>$$h_{0}$$</p>
+
+<p>可以是任意的张量，并非要由全0元素的tensor.</p>
+
+<p>伪代码</p>
+
+<pre><code class="language-py">
+def rnn(x):
+    output,s = acitve(x)
+    hidden = s
+    return output,hidden
+</code></pre>
+
+<p>active方法首先将样本乘以U矩阵，再将state乘w矩阵，然后相加，再加上bias，最后非线性激活。我承认active方法比较难写，图是最直观的，但是图的话没有好的画图工具，所以还是请参考上面的公式。</p>
+
+<p>特别要注意的一点是</p>
+
+<p>$$ x_t $$</p>
+
+<p>是timestep中的一个时间点，我们的x的形状是</p>
+
+<pre><code class="language-js">
+[batch_size,timestep,features]
+
+[
+    [
+        [1,2,3,4,5],
+        [6,7,8,9,0]
+    ],
+    [
+        [1,2,3,4,4],
+        [1,2,3,1,89]
+    ]
+]
+
+shape of [2*2*5]
+
+</code></pre>
+
+<ul>
+<li><p>第一个维度是batch_size，意在多个样本</p></li>
+
+<li><p>第二个维度是timestep，代表一个样本的不同timestep</p></li>
+
+<li><p>第三个维度是一个timestep中一个周期中一个时间点数据</p></li>
+</ul>
+
+<p>这个是一个3D Tensor,我们假定我们都是用tensor来表示数据的话。</p>
 
 </div>
 
@@ -217,9 +270,13 @@ anaconda: <a href="https://www.anaconda.com/">https://www.anaconda.com/</a></p>
   
 
     
+    <a class="prev" href="http://www.ml4ai.com/2018/04/28/tensorflow/" title="tensorflow">
+      Previous
+    </a>
+    
 
     
-    <a class="next" href="http://www.ml4ai.com/2018/04/28/rnn/" title="rnn">
+    <a class="next" href="http://www.ml4ai.com/2018/04/28/pytorch_intro/" title="pytorch_intro">
       Next
     </a>
     

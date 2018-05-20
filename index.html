@@ -156,7 +156,7 @@
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="http://www.ml4ai.com/2018/04/29/deepleaning4j%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E5%AE%89%E8%A3%85/">Deepleaning4j简单介绍安装
+  <h2><a href="http://www.ml4ai.com/2018/04/29/deepleaning4j_setup_intro/">Deepleaning4j_setup_intro
 </a>
 </h2>
 
@@ -204,7 +204,7 @@ git是一个代码维护工具，类似的还有svn，主要用于代码管理
 
 
   <div class="container readlink">
-  <a href="http://www.ml4ai.com/2018/04/29/deepleaning4j%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E5%AE%89%E8%A3%85/">Read more &rarr;</a>
+  <a href="http://www.ml4ai.com/2018/04/29/deepleaning4j_setup_intro/">Read more &rarr;</a>
 
 </div>
 
@@ -214,7 +214,7 @@ git是一个代码维护工具，类似的还有svn，主要用于代码管理
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="http://www.ml4ai.com/2018/04/29/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B9%8Bbp/">神经网络之BP
+  <h2><a href="http://www.ml4ai.com/2018/04/29/bp_algorithm/">bp_algorithm
 </a>
 </h2>
 
@@ -257,7 +257,7 @@ $$\frac{dloss}{dw}$$
 
 
   <div class="container readlink">
-  <a href="http://www.ml4ai.com/2018/04/29/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%B9%8Bbp/">Read more &rarr;</a>
+  <a href="http://www.ml4ai.com/2018/04/29/bp_algorithm/">Read more &rarr;</a>
 
 </div>
 
@@ -267,122 +267,7 @@ $$\frac{dloss}{dw}$$
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="http://www.ml4ai.com/2018/04/28/pytorch%E7%AE%80%E4%BB%8B/">Pytorch简介
-</a>
-</h2>
-
-  <time datetime="2018-04-28">28 Apr, 2018</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    Pytorch pytorch是一个张量前向运算、自动反向运算管理工具，对张量运算有很好的支持。
-安装方法 我们先打开网站：http://pytorch.org 选择你的环境，比如linux，pip，cuda9。 完成以后生成命令，你把命令拷贝在你的cmd里执行即安装。
-简单说明 pytorch是一个深度学习计算图构建工具，它相对于tensorflow来说更灵活，为什么这样说呢，是因为它在构建计算图的时候是实时的，它记录变量的生命周期，即变量从什么操作得到，操作类型等。这非常重要，这样在进行自动微分的时候就能通过这种关系来计算，而tensorflow本身只是一张计算图，图的东西不可以更新，其实就是预先设计一个计算流程，然后再计算，这样导致了在计算过程需要改变计算图的时候是不能支持的。 一般来说，研究人员选择pytorch验证，然后使用tensorflow打包模型服务。
-资源 pytorch文档：http://pytorch-cn.readthedocs.io
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="http://www.ml4ai.com/2018/04/28/pytorch%E7%AE%80%E4%BB%8B/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="http://www.ml4ai.com/2018/04/28/recurrent-neural-network/">Recurrent Neural Network
-</a>
-</h2>
-
-  <time datetime="2018-04-28">28 Apr, 2018</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    循环神经网络 循环网络是一种序列识别模型，在RNN中，我们可以使它来进行各种序列的数学分类、回归操作。
-循环网络
- 1、RNN
- 2、双向RNN
- 3、LSTM
- 4、EncoderDecoder
-  1、RNN  计算公式  $$ h_t = output_t = \sigma(xtU+h{t-1}W+bias) $$
-这里指的是一个RNN的计算图，我们对比发现，RNN的输出计算比一般网络的净输出多出了一此东西，也就是hidden state，它这样的结果就会与历史相关。我们通过这样的途径，可以很好的实现序列模型。
-当前我们的
-$$h_{0}$$
-可以是任意的张量，并非要由全0元素的tensor.
-伪代码
-def rnn(x): output,s = acitve(x) hidden = s return output,hidden  active方法首先将样本乘以U矩阵，再将state乘w矩阵，然后相加，再加上bias，最后非线性激活。我承认active方法比较难写，图是最直观的，但是图的话没有好的画图工具，所以还是请参考上面的公式。
-特别要注意的一点是
-$$ x_t $$
-是timestep中的一个时间点，我们的x的形状是
-[batch_size,timestep,features] [ [ [1,2,3,4,5], [6,7,8,9,0] ], [ [1,2,3,4,4], [1,2,3,1,89] ] ] shape of [2*2*5]   第一个维度是batch_size，意在多个样本
- 第二个维度是timestep，代表一个样本的不同timestep
- 第三个维度是一个timestep中一个周期中一个时间点数据
-  这个是一个3D Tensor,我们假定我们都是用tensor来表示数据的话。
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="http://www.ml4ai.com/2018/04/28/recurrent-neural-network/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="http://www.ml4ai.com/2018/04/28/tensorflow/">tensorflow
-</a>
-</h2>
-
-  <time datetime="2018-04-28">28 Apr, 2018</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    Tensorflow &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tensorflow是一个Google推出的张量图计算工具，它并不是python编写的，只是支持python来调用它，所以tensorflow的性能是在大部分深度学习框架中比较快的，因为它的图模块运行在c++编写的引用模块中，它可以使用gpu进行运算，速度非常快
-安装方法
-首先安装anaconda。 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（这个直接下载对应版本安装就可以）。
-安装numpy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;安装命令：pip install numpy
-安装tensorflow &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;命令：pip install tensorflow,当你是GPU支持时，pip install tensorflow-gpu来安装GPU版本，注意GPU版本要正常工作你必须安装cuda和cudnn工具，并且正确的设置，否则你的tensorflow可能不能正常运行。
-简单说明 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tensorflow是一个张量计算图工具，在tensorflow中，每个tensor都有一个op和op参与的依赖tensor，这样形成一个op图，op图是可以微分的，所以tensorflow优化器能够将所有的tensor的导数都求出来，优化器会通过导数来更新参数，进行优化。
-资源 anaconda: https://www.anaconda.com/
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="http://www.ml4ai.com/2018/04/28/tensorflow/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="http://www.ml4ai.com/2018/04/28/%E5%85%B3%E4%BA%8E/">关于
+  <h2><a href="http://www.ml4ai.com/2018/04/28/about/">about
 </a>
 </h2>
 
@@ -404,7 +289,7 @@ $$ x_t $$
 
 
   <div class="container readlink">
-  <a href="http://www.ml4ai.com/2018/04/28/%E5%85%B3%E4%BA%8E/">Read more &rarr;</a>
+  <a href="http://www.ml4ai.com/2018/04/28/about/">Read more &rarr;</a>
 
 </div>
 
@@ -414,57 +299,7 @@ $$ x_t $$
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="http://www.ml4ai.com/2018/04/28/%E6%9B%B4%E6%96%B0%E5%99%A8%E7%AE%80%E4%BB%8B/">更新器简介
-</a>
-</h2>
-
-  <time datetime="2018-04-28">28 Apr, 2018</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    更新器 更新器一个神经网络进行调节的策略，我们普通的SGD随机梯度下降会有很多局限，为了解决这些可以优化的问题引入多种策略，这些策略能加速神经网络的训练。
-我们也称更新器叫优化器。
-常用的更新器
- 1、SGD 随机梯度下降
- 2、MOMENT 动量
- 3、Nesterov 牛顿下降
- 4、Adamgrad
- 5、Adamdelta
- 6、RMSProp
- 7、Adam
-  SGD 这个是我们最常用的算法了，随机梯度下降，我们先来看一下梯度下降。 普通的梯度下降是指我们一次性将所有的数据给网络，由网络反向计算loss对每个参数的偏导数，这个偏数对应的是所有的数据，所以这个梯度非常的准确。但是这样有一个问题就是当数据量大的时候不管是计算还是存储资源都会占用很大，这样使得我们很难训练神经网络参数，普通的GD对于小网络来说可以使用，对于大网络来说就不要去使用了，因为它的计算量非常大。
-SDG的更新方法：
-$$ \Delta_{\theta_t} = - \eta g_t $$
-Moment 动量是一常见的更新策略，在动量的帮助下，可以加速神经网络的收敛，可以有效的节省收敛时间，因为动量是累积的，所以可以很快的方式达到收敛。 公式：
-参数说明：
-$$ \text{参数：} \mu \text{ 衰减系数} $$
-$$ \text{参数：} v_{t-1} \text{ 上一次的速度} $$
-$$ \text{参数：} g_t \text{ 梯度} $$
-$$ \text{参数：} \eta \text{ 学习率} $$
-注意，衰减系数不能大于1，只能小于1，不能小于0。
-Nesterov 这个牛顿法则是比运量更进一步，它首先更新参数，然后再进行动量计算，这样以来我们收剑速度可能更快，而且可以收反馈。
-这种先更新，再来求梯度，然后再运量累积的做法实际上是加速二阶动量的方式，这种方法比动量在某些网络中表现更好。
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="http://www.ml4ai.com/2018/04/28/%E6%9B%B4%E6%96%B0%E5%99%A8%E7%AE%80%E4%BB%8B/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="http://www.ml4ai.com/2018/04/28/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/">神经网络入门
+  <h2><a href="http://www.ml4ai.com/2018/04/28/bp_first_learn/">bp_first_learn
 </a>
 </h2>
 
@@ -508,7 +343,172 @@ $$ Y=net(X) $$
 
 
   <div class="container readlink">
-  <a href="http://www.ml4ai.com/2018/04/28/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%85%A5%E9%97%A8/">Read more &rarr;</a>
+  <a href="http://www.ml4ai.com/2018/04/28/bp_first_learn/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h2><a href="http://www.ml4ai.com/2018/04/28/optimizer/">optimizer
+</a>
+</h2>
+
+  <time datetime="2018-04-28">28 Apr, 2018</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+    更新器 更新器一个神经网络进行调节的策略，我们普通的SGD随机梯度下降会有很多局限，为了解决这些可以优化的问题引入多种策略，这些策略能加速神经网络的训练。
+我们也称更新器叫优化器。
+常用的更新器
+ 1、SGD 随机梯度下降
+ 2、MOMENT 动量
+ 3、Nesterov 牛顿下降
+ 4、Adamgrad
+ 5、Adamdelta
+ 6、RMSProp
+ 7、Adam
+  SGD 这个是我们最常用的算法了，随机梯度下降，我们先来看一下梯度下降。 普通的梯度下降是指我们一次性将所有的数据给网络，由网络反向计算loss对每个参数的偏导数，这个偏数对应的是所有的数据，所以这个梯度非常的准确。但是这样有一个问题就是当数据量大的时候不管是计算还是存储资源都会占用很大，这样使得我们很难训练神经网络参数，普通的GD对于小网络来说可以使用，对于大网络来说就不要去使用了，因为它的计算量非常大。
+SDG的更新方法：
+$$ \Delta_{\theta_t} = - \eta g_t $$
+Moment 动量是一常见的更新策略，在动量的帮助下，可以加速神经网络的收敛，可以有效的节省收敛时间，因为动量是累积的，所以可以很快的方式达到收敛。 公式：
+参数说明：
+$$ \text{参数：} \mu \text{ 衰减系数} $$
+$$ \text{参数：} v_{t-1} \text{ 上一次的速度} $$
+$$ \text{参数：} g_t \text{ 梯度} $$
+$$ \text{参数：} \eta \text{ 学习率} $$
+注意，衰减系数不能大于1，只能小于1，不能小于0。
+Nesterov 这个牛顿法则是比运量更进一步，它首先更新参数，然后再进行动量计算，这样以来我们收剑速度可能更快，而且可以收反馈。
+这种先更新，再来求梯度，然后再运量累积的做法实际上是加速二阶动量的方式，这种方法比动量在某些网络中表现更好。
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="http://www.ml4ai.com/2018/04/28/optimizer/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h2><a href="http://www.ml4ai.com/2018/04/28/pytorch_intro/">pytorch_intro
+</a>
+</h2>
+
+  <time datetime="2018-04-28">28 Apr, 2018</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+    Pytorch pytorch是一个张量前向运算、自动反向运算管理工具，对张量运算有很好的支持。
+安装方法 我们先打开网站：http://pytorch.org 选择你的环境，比如linux，pip，cuda9。 完成以后生成命令，你把命令拷贝在你的cmd里执行即安装。
+简单说明 pytorch是一个深度学习计算图构建工具，它相对于tensorflow来说更灵活，为什么这样说呢，是因为它在构建计算图的时候是实时的，它记录变量的生命周期，即变量从什么操作得到，操作类型等。这非常重要，这样在进行自动微分的时候就能通过这种关系来计算，而tensorflow本身只是一张计算图，图的东西不可以更新，其实就是预先设计一个计算流程，然后再计算，这样导致了在计算过程需要改变计算图的时候是不能支持的。 一般来说，研究人员选择pytorch验证，然后使用tensorflow打包模型服务。
+资源 pytorch文档：http://pytorch-cn.readthedocs.io
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="http://www.ml4ai.com/2018/04/28/pytorch_intro/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h2><a href="http://www.ml4ai.com/2018/04/28/rnn/">rnn
+</a>
+</h2>
+
+  <time datetime="2018-04-28">28 Apr, 2018</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+    循环神经网络 循环网络是一种序列识别模型，在RNN中，我们可以使它来进行各种序列的数学分类、回归操作。
+循环网络
+ 1、RNN
+ 2、双向RNN
+ 3、LSTM
+ 4、EncoderDecoder
+  1、RNN  计算公式  $$ h_t = output_t = \sigma(xtU+h{t-1}W+bias) $$
+这里指的是一个RNN的计算图，我们对比发现，RNN的输出计算比一般网络的净输出多出了一此东西，也就是hidden state，它这样的结果就会与历史相关。我们通过这样的途径，可以很好的实现序列模型。
+当前我们的
+$$h_{0}$$
+可以是任意的张量，并非要由全0元素的tensor.
+伪代码
+def rnn(x): output,s = acitve(x) hidden = s return output,hidden  active方法首先将样本乘以U矩阵，再将state乘w矩阵，然后相加，再加上bias，最后非线性激活。我承认active方法比较难写，图是最直观的，但是图的话没有好的画图工具，所以还是请参考上面的公式。
+特别要注意的一点是
+$$ x_t $$
+是timestep中的一个时间点，我们的x的形状是
+[batch_size,timestep,features] [ [ [1,2,3,4,5], [6,7,8,9,0] ], [ [1,2,3,4,4], [1,2,3,1,89] ] ] shape of [2*2*5]   第一个维度是batch_size，意在多个样本
+ 第二个维度是timestep，代表一个样本的不同timestep
+ 第三个维度是一个timestep中一个周期中一个时间点数据
+  这个是一个3D Tensor,我们假定我们都是用tensor来表示数据的话。
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="http://www.ml4ai.com/2018/04/28/rnn/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h2><a href="http://www.ml4ai.com/2018/04/28/tensorflow/">tensorflow
+</a>
+</h2>
+
+  <time datetime="2018-04-28">28 Apr, 2018</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+    Tensorflow &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tensorflow是一个Google推出的张量图计算工具，它并不是python编写的，只是支持python来调用它，所以tensorflow的性能是在大部分深度学习框架中比较快的，因为它的图模块运行在c++编写的引用模块中，它可以使用gpu进行运算，速度非常快
+安装方法
+首先安装anaconda。 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（这个直接下载对应版本安装就可以）。
+安装numpy &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;安装命令：pip install numpy
+安装tensorflow &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;命令：pip install tensorflow,当你是GPU支持时，pip install tensorflow-gpu来安装GPU版本，注意GPU版本要正常工作你必须安装cuda和cudnn工具，并且正确的设置，否则你的tensorflow可能不能正常运行。
+简单说明 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tensorflow是一个张量计算图工具，在tensorflow中，每个tensor都有一个op和op参与的依赖tensor，这样形成一个op图，op图是可以微分的，所以tensorflow优化器能够将所有的tensor的导数都求出来，优化器会通过导数来更新参数，进行优化。
+资源 anaconda: https://www.anaconda.com/
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="http://www.ml4ai.com/2018/04/28/tensorflow/">Read more &rarr;</a>
 
 </div>
 
