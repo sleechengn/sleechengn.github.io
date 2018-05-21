@@ -14,7 +14,7 @@
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="author" content="">
-<meta name="generator" content="Hugo 0.40.1" />
+<meta name="generator" content="Hugo 0.40.2" />
 
   <meta property="og:title" content="循环递归网络" />
 <meta property="og:description" content="" />
@@ -190,9 +190,8 @@
 
 <p>伪代码</p>
 
-<pre><code class="language-py">
-def rnn(x):
-    output,s = acitve(x)
+<pre><code class="language-py">def rnn(x,hidden):
+    output,s = acitve(x,hidden)
     hidden = s
     return output,hidden
 </code></pre>
@@ -228,7 +227,7 @@ shape of [2*2*5]
 
 <li><p>第二个维度是timestep，代表一个样本的不同timestep</p></li>
 
-<li><p>第三个维度是一个timestep中一个周期中一个时间点数据</p></li>
+<li><p>第三个维度是一个timestep中一个周期中一个时间点的数据</p></li>
 </ul>
 
 <p>这个是一个3D Tensor,我们假定我们都是用tensor来表示数据的话。</p>

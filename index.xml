@@ -175,13 +175,13 @@ $$ Y=net(X) $$
 $$h_{0}$$
 可以是任意的张量，并非要由全0元素的tensor.
 伪代码
-def rnn(x): output,s = acitve(x) hidden = s return output,hidden  active方法首先将样本乘以U矩阵，再将state乘w矩阵，然后相加，再加上bias，最后非线性激活。我承认active方法比较难写，图是最直观的，但是图的话没有好的画图工具，所以还是请参考上面的公式。
+def rnn(x,hidden): output,s = acitve(x,hidden) hidden = s return output,hidden  active方法首先将样本乘以U矩阵，再将state乘w矩阵，然后相加，再加上bias，最后非线性激活。我承认active方法比较难写，图是最直观的，但是图的话没有好的画图工具，所以还是请参考上面的公式。
 特别要注意的一点是
 $$ x_t $$
 是timestep中的一个时间点，我们的x的形状是
 [batch_size,timestep,features] [ [ [1,2,3,4,5], [6,7,8,9,0] ], [ [1,2,3,4,4], [1,2,3,1,89] ] ] shape of [2*2*5]   第一个维度是batch_size，意在多个样本
  第二个维度是timestep，代表一个样本的不同timestep
- 第三个维度是一个timestep中一个周期中一个时间点数据
+ 第三个维度是一个timestep中一个周期中一个时间点的数据
   这个是一个3D Tensor,我们假定我们都是用tensor来表示数据的话。</description>
     </item>
     
