@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JBake</title>
+    <link>http://www.ml4ai.com</link>
+    <atom:link href="http://www.ml4ai.com/feed.xml" rel="self" type="application/rss+xml" />
+    <description>JBake Bootstrap Template</description>
+    <language>en-gb</language>
+    <pubDate>周二, 22 5月 2018 20:22:51 +0800</pubDate>
+    <lastBuildDate>周二, 22 5月 2018 20:22:51 +0800</lastBuildDate>
+
+    <item>
+      <title>DL4J</title>
+      <link>http://www.ml4ai.com/post/deeplearning4j_stp.html</link>
+      <pubDate>周二, 22 5月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">post/deeplearning4j_stp.html</guid>
+      	<description>
+	&lt;h1&gt;简介&lt;/h1&gt; 
+&lt;hr&gt; 
+&lt;p&gt;&lt;strong&gt;deeplearning4j&lt;/strong&gt;是一个基于jvm的机器学习框架，主要应用于商业环境下的机器学习应用场景。为什么这样説呢？因为它提供了商业化环境下运行的支撑体系，比如GPU、Spark等的支持，一般来説对于理论验证来説是不需要spark这些的，所以它是为商业应用打造的，它的主要维护机构来自于一家美国的初创公司：&lt;strong&gt;skymind&lt;/strong&gt;.&lt;/p&gt; 
+&lt;p&gt;主页地址：&lt;a href=&quot;http://www.deeplearning4j.org&quot;&gt;http://www.deeplearning4j.org&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;中文说明：&lt;a href=&quot;http://www.deeplearning4j.org/cn&quot;&gt;http://www.deeplearning4j.org/cn&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;github:&lt;a href=&quot;https://github.com/deeplearning4j&quot;&gt;https://github.com/deeplearning4j&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;安装前准备：&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;apache maven&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;java sdk1.8&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;eclipse/idea&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;git&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;以上这些是你需要安装的&lt;/p&gt; 
+&lt;p&gt;maven主要用于管理项目所依赖的库，用于管理java的jar仓库，它能让你方便的引入一个软件栈。&lt;/p&gt; 
+&lt;p&gt;java不必説了，它的下载地址在oracle，请自行前往下载，注意版本。&lt;/p&gt; 
+&lt;p&gt;eclipse/idea是开发工具，也就是ide，一个好的开发工具会大大增加效率，因为本人使用的是eclipse和idea，java还有很多开发工具，这里就不一一说明了。但是有一点要注意，选用的ide必须支持maven管理依赖包，不然手动配置会很麻烦。&lt;/p&gt; 
+&lt;p&gt;git是一个代码维护工具，类似的还有svn，主要用于代码管理&lt;/p&gt; 
+&lt;h2&gt;安装java&lt;/h2&gt; 
+&lt;p&gt;请在oracle下载java sdk，注意下载1.8版本，虽然其它版本也许支持，但是不同的版本有一定的区别，为了少走弯路用1.8.&lt;/p&gt; 
+&lt;h2&gt;下载deeplearning4j演示&lt;/h2&gt; 
+&lt;p&gt;github地址：&lt;a href=&quot;https://github.com/deeplearning4j/dl4j-examples.git&quot;&gt;https://github.com/deeplearning4j/dl4j-examples.git&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;将代码下载到本地。&lt;/p&gt; 
+&lt;p&gt;下面以idea为例讲一下如何导入运行&lt;/p&gt; 
+&lt;h3&gt;配置git&lt;/h3&gt; 
+&lt;p&gt;&lt;img src=&quot;http://www.ml4ai.com/images/click_config.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;http://www.ml4ai.com/images/conf_of_git.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;把git的路径配置好，不然git可能不能正常工作，后面不没有办法了。&lt;/p&gt; 
+&lt;h3&gt;配置maven&lt;/h3&gt; 
+&lt;p&gt;&lt;img src=&quot;http://www.ml4ai.com/images/click_config.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;http://www.ml4ai.com/images/conf_maven_of.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;maven home 一定要配置好,就是你maven所有的目录路径&lt;/p&gt; 
+&lt;p&gt;还有就是User setting，选override，指定maven目录下的conf/settings.xml&lt;br&gt; 因为这样可以使用自己定义的镜像，用阿里云挺快，所以可以使用阿里云的仓库。&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;阿里云：&lt;/strong&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-xml&quot;&gt;&amp;lt;mirror&amp;gt;
+        &amp;lt;id&amp;gt;alimaven&amp;lt;/id&amp;gt;
+        &amp;lt;name&amp;gt;aliyun maven&amp;lt;/name&amp;gt;
+        &amp;lt;url&amp;gt;http://maven.aliyun.com/nexus/content/groups/public/&amp;lt;/url&amp;gt;
+        &amp;lt;mirrorOf&amp;gt;central&amp;lt;/mirrorOf&amp;gt;
+    &amp;lt;/mirror&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;这个设置可以加速你的下载，因为你在国内访问中央仓库很慢，把这个配置就复制到settings.xml里的mirrors里面就行&lt;/p&gt; 
+&lt;p&gt;开始导入&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;http://www.ml4ai.com/images/sopen.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;http://www.ml4ai.com/images/so.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;http://www.ml4ai.com/images/op.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;http://www.ml4ai.com/images/ip.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;开始下载jar包了，这个要等一会儿，只要没中断就等。&lt;/p&gt; 
+&lt;p&gt;在idea里配置java8就不説了，这些问题做为常识自己解决。&lt;br&gt; 然后就可以运行了，下面讲讲几个特别坑的环境问题。&lt;/p&gt; 
+&lt;h3&gt;电脑只有cpu没有GPU怎么办&lt;/h3&gt; 
+&lt;p&gt;如果你电脑没有nvidia显卡或者还没有安装cuda工具以及cudnn，那么请在主pom.xml里设置&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-xml&quot;&gt;&amp;lt;nd4j.backend&amp;gt;nd4j-native-platform&amp;lt;/nd4j.backend&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;如果你的电脑里有显示卡并安装了cuda工具，则按对应的版本修改&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-xml&quot;&gt;&amp;lt;nd4j.backend&amp;gt;nd4j-cuda-9.1-platform&amp;lt;/nd4j.backend&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;假定你用的cpu，还有一个坑，用cpu也启动不了。你要把对应pom.xml 里的下列依赖去掉&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-xml&quot;&gt;&amp;lt;dependency&amp;gt;
+                &amp;lt;groupId&amp;gt;org.nd4j&amp;lt;/groupId&amp;gt;
+                &amp;lt;artifactId&amp;gt;nd4j-cuda-8.0-platform&amp;lt;/artifactId&amp;gt;
+                &amp;lt;version&amp;gt;${nd4j.version}&amp;lt;/version&amp;gt;
+            &amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;这些不同版本都要去掉，这样再启动，如果还有一个错误，就是没有mkl,这是最后一个坑。&lt;br&gt; 请按图中设置启动参数&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;http://www.ml4ai.com/images/edit_run_conf.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;http://www.ml4ai.com/images/add_dlib.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-xml&quot;&gt;-Djava.library.path
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;加上这个参数就可以。&lt;/p&gt; 
+&lt;p&gt;有问题也欢迎加入深度学习与人工智能交流群，一起交流学习讨论，QQ群号码 374685750。谢谢大家的支持，我有时间会发更多的文章，谢谢大家的支持。&lt;/p&gt; 
+&lt;p&gt;本文可以转载，但是必须声明出处链接和说明；&lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>反向传播</title>
+      <link>http://www.ml4ai.com/post/bp_se.html</link>
+      <pubDate>周二, 22 5月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">post/bp_se.html</guid>
+      	<description>
+	&lt;h1&gt;１、前置知识&lt;/h1&gt; 
+&lt;p&gt;阅读这篇文章时，假定你了解以下知识：&lt;/p&gt; 
+&lt;h2&gt;1、神经网络输入输出的计算&lt;/h2&gt; 
+&lt;h2&gt;2、损失函数&lt;/h2&gt; 
+&lt;h2&gt;3、导数&lt;/h2&gt; 
+&lt;p&gt;　　我觉得在这之前，你必须要把上面三个概念弄清楚，因为接下来的内容是以上面三个知识为基础的讲解，所以我们还是来复习一下上面三个知识点，如果你有不清楚的，可以看我另一篇&lt;a href=&quot;/post/bp_first/&quot;&gt;文章&lt;/a&gt;或是其它博文。&lt;/p&gt; 
+&lt;p&gt;　　神经网络不说了，如果你不清楚定义，可以点上面的链接看我的另一篇博文，当然你可以查资料，但是在读这篇博文的同时请你务必要搞清楚，下面还是说一下损失函数和导数吧。&lt;/p&gt; 
+&lt;p&gt;　　损失函数$$loss$$，我们回顾一下定义，其实就是网络的实际输出和你想要的输出之间的差距，是一个欧氏距离，这个你学过 几何应该知道怎么计算，也就是平方和，我们有一个专业名词叫L2范数。另外还有一个重要的概念就是，可以通过调整权重偏执等参数来使损失函数变小，我们现在所说的损失函数若没有说明，默认是指网络输出的一个N维的点和希望输出的目标点之间的距离。&lt;/p&gt; 
+&lt;h1&gt;2、导数&lt;/h1&gt; 
+&lt;p&gt;　　我们看看导数吧，这个很重要，因为导数是关键，它是让网络往目标更新的关键，我不像其它博文那样讲，我用最直观的来讲，就从导数本身开始。我们先来看看导数的定义，从定义出发总是没有错的，对于一个曲线来说，导数是什么？&lt;/p&gt; 
+&lt;p&gt;　　我们以二维的曲线为例吧，对于一个连续的曲线来说，我们可以用一个函数来表示，假设我们令这个函数关系是：&lt;/p&gt; 
+&lt;p&gt;$$ y=f(x)$$&lt;/p&gt; 
+&lt;p&gt;　　我们来看看导数的定义，对于某一个点(x0,y0)来说，在这个点的导数定义是：&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;http://www.ml4ai.com/images/dx0.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;$$ \text{在}x_0\text{处的导数定义} $$&lt;/p&gt; 
+&lt;p&gt;　　最原始的导数定义，如果这个不会，你就去翻上学时的内容，对于我们来说，不难看出，**导数就是该点的斜率；&lt;br&gt; $$ \text{如果我们要通过改变} x_0 \text{的值让}f(x0) \text{变小，我们必须把}x0\text{往导数反方向移动}$$&lt;br&gt; 根据定义，这个动作可以写这样的赋值：&lt;br&gt; $$x_0=x_0-step*f&apos;(x_0)$$&lt;/p&gt; 
+&lt;p&gt;　　参数说明&lt;/p&gt; 
+&lt;p&gt;　　　　　　　　　step代表移动的步长系数，一般很小，不能移太大，因为移太大可能一步移过了最低点&lt;/p&gt; 
+&lt;p&gt;　　　　　　　　f&apos;(x0)代表在x0处的导数&lt;/p&gt; 
+&lt;p&gt;　　如果$$f&apos;(x_0)&amp;gt;0$$，则往左移动$$step*|f&apos;(x_0)|$$，右边竖线是导数的绝对值&lt;/p&gt; 
+&lt;p&gt;　　如果$$f&apos;(x_0)&amp;lt;0$$，则往右移动$$step*|f&apos;(x_0)|$$，右边竖线是导数的绝对值&lt;/p&gt; 
+&lt;p&gt;　　经过不断的计算导数然后不断的这样移动后，我们的f(x0)就不断的变小，直到让它成0，无法再移动，这样f(x0)就达到了一个极小值。&lt;/p&gt; 
+&lt;p&gt;　　我们有了一个让f(x0)缩小的方法了，我们再来看看我们接下来重要的内容，我知道上面的可能对有人来说很基础，对有人来说却很困难，所以这个一定要确保能理解上面的方法，才能看下面的内容。&lt;/p&gt; 
+&lt;p&gt;　　我们来看看，在神经网络里，从通过类似上微小移动每个参数来改变$$loss$$。现在我们要讲方法，所以请务必把上面的东西看完并确保能完全理解，因为那是最基础的，所有后面的知识都基于上面的知识。&lt;/p&gt; 
+&lt;p&gt;　　我们找到了一个在连续曲线上找到较小值的方法，就是调整某个参数，按它的导数反向微小移动的方式。&lt;/p&gt; 
+&lt;p&gt;　　我们知道神经网络有权重还有偏执，我们这里用符号来表示，权重使用$$w_1,w_2,w_3,w_4,w_5,w_n$$,,,等来表示，偏执用$$b_1,b_2,b_3,b_4,b_5,b_n$$,,表示，我们这些都是网络中的参数，我们最终的目的是要&lt;strong&gt;调整这些参数的大小，让$$ loss $$最小。&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;　　我们知道神经网络是一个从输入层输入一个数据，然后通过计算流程，最终输出一数据，再与目标数据计算出一个&lt;strong&gt;loss&lt;/strong&gt;，我们一定要清楚这个，特别是&lt;strong&gt;loss&lt;/strong&gt;不是输出数据，而是计算结果与期望目标的欧氏距离。那么，对于一个确定的固定的输入神经网络，&lt;strong&gt;LOSS&lt;/strong&gt;的大小取决于权重和偏执，调整其中一个权重，就意味着&lt;strong&gt;LOSS&lt;/strong&gt;就会变化，那么同样的，我们根据导数的定义：调整其中一个权重$$w_n$$使权重改变一个很小的$$dw$$，调整以后$$loss$$就会改变，对应的$$loss$$有一个小的改变量，我们简写为$$dloss$$，那么根据导数的定义，我们可以得出：对于此刻的状态，损失对某个权重的导数可以表示为：&lt;/p&gt; 
+&lt;p&gt;$$\frac{dloss}{dw}$$&lt;/p&gt; 
+&lt;p&gt;　　这个解释一下，就是説移动一个参数后&lt;strong&gt;LOSS&lt;/strong&gt;也会移动，两个的比值就是一个导数，也可当成斜率。&lt;/p&gt; 
+&lt;p&gt;　　这就是此刻状态&lt;strong&gt;loss&lt;/strong&gt;对&lt;strong&gt;wn&lt;/strong&gt;的导数，由于&lt;strong&gt;wn&lt;/strong&gt;可以是任意一个权重，所以我们称以上式子为此刻&lt;strong&gt;loss&lt;/strong&gt;对&lt;strong&gt;wn&lt;/strong&gt;的偏导数&lt;br&gt; $$ \frac {\partial loss}{\partial w_n}$$&lt;br&gt; 这个是函数里的定义，所以不要问为什么这么取名字，原因是有多个自变量，每个变量的导数就是偏导数。同理，我们可以求出&lt;strong&gt;loss&lt;/strong&gt;对任意的某个权重或某个偏执的偏导数，因为你只要把这个参数移动改一个微小量，对比&lt;strong&gt;loss&lt;/strong&gt;的变化量就行。这样我们从理论上可以计算&lt;strong&gt;loss&lt;/strong&gt;对任意参数的偏导数了。&lt;/p&gt; 
+&lt;p&gt;　　还记得我们的曲线找最小值的方法吗，没错，你只要把参数值往偏导数反方向移动一个微小的值，也等于减小&lt;strong&gt;loss&lt;/strong&gt;。&lt;/p&gt; 
+&lt;h1&gt;3、训练调整参数&lt;/h1&gt; 
+&lt;p&gt;　　下面讲今天的主题，BP算法，也就是反向传播算法，它是干什么的，没错，它就是计算&lt;strong&gt;loss&lt;/strong&gt;对每个参数的偏导数的，所以我们就来看看BP是怎么计算的，这里为了照顾入门的同学，我就不讲什么矩阵运算了，我们以例子来讲怎么计算偏导数。&lt;/p&gt; 
+&lt;p&gt;　　我们把loss的计算列成一个算式，在某次计算中：&lt;strong&gt;loss&lt;/strong&gt; = .........，这里的省略号代表前面的计算流程，就是一堆数字和各种运算组合，由加法、乘法、平方、和Sigmoid函数组成，那么，我们如何求某个参数的偏导呢？我们就把这个参数设为变量x，不把它写成一个数字，比如把$$w_n$$写成自变量x，其它的所有参数都写成数字，于是我们就得到了一个只含有loss和x是变量的函数了，乘下的就是一元函数求导了，求loss对x的导数，求出导数以后，代入x值，就得到某参数的导数。&lt;/p&gt; 
+&lt;p&gt;　　我还是来一个简单的例子，假设一个简单的网络，loss展开后。&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-math&quot;&gt;loss = (1/(1+exp(-(w1*x1 + w2*x3 + w3 * x3)) - 1)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code&gt;  请注意了，x1,w1,w3,w3,w4，等在一个计算中都是已知的，我们把除了w1的其它都写成已知的数字：
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-math&quot;&gt;loss = (1/(1+exp(-(w1*0.5+ 0.3*0.7 + 0.8*0.35)) - 1)
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;　　我们发现，函数成了一个只含有loss和w1的函数了，然后一元函数求导：dloss/dw1，懂了吧？然后计算出的导数代入w1值，计算然出一个导数值，同理把式子写成只含有w2的式子，计算出w2的导数，这样就可以计算任意参数的导数了。&lt;/p&gt; 
+&lt;p&gt;　　这样我们可以通过固定其它参数，把要求导数的参数写成自变量，就能求参数的偏导数了。哈哈，这下知道了吧，求参数偏导数，那么反向传播是什么？其实是因为求的是一个复合函数，所以求导要一层一层的求，还能回忆函数的导数求法吗？从最外层往里层求，对应网络是从后面朝向前面求的，所以叫反向传播。&lt;/p&gt; 
+&lt;p&gt;　　计算量大，优化我不说了，在反向传播里，要规划计算的路径，以最小的计算量来完成，因为参数很多，某些网络有数亿参数，所以这个优化问题要在你充分理解自己来总结。&lt;/p&gt; 
+&lt;p&gt;　　这下我们只需要每次前向计算一次，再反向计算一次各个参数的偏导数，我们更新一次参数就行了，这个过程就是训练，不断的调整参数减小loss，这里要提一下这个计算量非常大，所以要使用像GPU这种高速的并行，并行的问题有空我再讲讲，这里不提，简单的说就是分工计算，把能分工的计算任务给不同的独立计算提供者，我们不断的训练让loss变小再次变小，也就是loss对每个权重和偏执的导数接近0，不能再小为止，这样loss很小的情况下，网络就成了我们预期的样子，可以用来对图像分类了。&lt;/p&gt; 
+&lt;p&gt;　　&lt;/p&gt; 
+&lt;p&gt;　　有问题也欢迎加入深度学习与人工智能交流群，一起交流学习讨论，QQ群号码 374685750。谢谢大家的支持，我有时间会发更多的文章，谢谢大家的支持。&lt;/p&gt; 
+&lt;p&gt;　　本文可以转载，但是必须声明出处链接和说明；&lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>BP神经网络</title>
+      <link>http://www.ml4ai.com/post/bp_first.html</link>
+      <pubDate>周二, 22 5月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">post/bp_first.html</guid>
+      	<description>
+	&lt;h1&gt;1、什么是神经网络，它是如何计算的。&lt;/h1&gt; 
+&lt;p&gt;　　首先来看神经网络长什么样子：&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;http://www.ml4ai.com/images/20180322134236904.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;神经网络&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;　　图中表示的是一个输入层是4，中间层为3，输出层2的神经网络，每个圈表示一个神经元，比如,,等都是神经元。上图是一个的神经网络。实际网络可以有任意的输入，任意的中间层，任意的输出数量。比如可以是这样任意的层数。&lt;/p&gt; 
+&lt;p&gt;$$ 1000&lt;em&gt;100&lt;/em&gt;10*5 $$&lt;/p&gt; 
+&lt;p&gt;图中每一条连接的线叫做&lt;strong&gt;权重&lt;/strong&gt;，比如&lt;br&gt; $$ x1-&amp;gt;h1$$&lt;br&gt; 这条线。&lt;/p&gt; 
+&lt;p&gt;我们表示:&lt;/p&gt; 
+&lt;p&gt;$$ W_{x_1h_1} $$&lt;/p&gt; 
+&lt;p&gt;　　了解了这些以后，我们来看一下神经网络的计算&lt;/p&gt; 
+&lt;p&gt;　　神经网络是从输入层计算，到中间层，一层一层计算到输出，首先对输入层赋值，然后计算第二层，最后计算y1,y2输出。&lt;/p&gt; 
+&lt;p&gt;h1的计算方法是：&lt;/p&gt; 
+&lt;p&gt;假定我们用&lt;br&gt; $$ W_{x_ih_j} $$&lt;br&gt; 代表连接&lt;br&gt; $$ x_i $$&lt;br&gt; 和&lt;br&gt; $$ h_j $$&lt;br&gt; 的权重，则h1的计算可以写为：&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;http://www.ml4ai.com/images/demo1.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;本层神经元的输入定义：&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;http://www.ml4ai.com/images/demo2.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;这里说明一下，输入层神经元下标i,输出层下标j,这样就定入了神经元的净输入，根据上面的网络图再结合公式理解。其实就是一个加权求和的过程，注意bias代表神经元的偏执。&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;神经元的净输入&lt;/strong&gt;&lt;/p&gt; 
+&lt;p&gt;bias-偏执（表示本层每个神经元的偏执，注意，每个本层神经元都有一个偏执，就是一个数字） xi代表输入层第i个神经元的值，wij代表连接输入层第i个神经元，本层第j个神经元的权重。&lt;/p&gt; 
+&lt;p&gt;　　每个神经元的输入，就是与这个神经元相连的上一层神经元乘以权重然后再神经元处相加，后面再加上偏执，这就是神经元的输入。&lt;/p&gt; 
+&lt;p&gt;每个神经元的输出等于神经元输入应用一个激活函数，比如SIGMOID，公式如下：&lt;/p&gt; 
+&lt;p&gt;$$ output = sigmoid(input) $$&lt;/p&gt; 
+&lt;p&gt;　　参数：output-输出 input-神经元输入 sigmoid-一个S形函数，原型：&lt;br&gt; $$ y= \frac{1}{1+e^{-x}}$$&lt;/p&gt; 
+&lt;p&gt;神经网络就这样计算到最后一层，每条连线都会发生计算，最后到y1、y2计算出一个输出值。&lt;/p&gt; 
+&lt;h1&gt;2、神经网络用来干什么。&lt;/h1&gt; 
+&lt;p&gt;　　神经网络就是这样的一个计算网络，人们可能问，这个有什么用，网络本身可以根据一个输入，产生一个输出。&lt;/p&gt; 
+&lt;p&gt;　　在我们上面学习的过程中，我们已经了解网络中有哪些东西可以影响输出值，不难想象，给定输入值，网络中还有权重和偏执，权重和偏执的值可以影响网络的输出。那么可以得出一个结论，调整每个权重和每个神经元的偏执可以改变网络输出。&lt;/p&gt; 
+&lt;p&gt;　　网络是一个计算流程图，假定我们输入数组x，结果输出数组y，X和Ｙ都是一个数组，我们知道一个向量或者一个坐标点也可以数组表示，这里我们把向量或坐标Ｘ和Ｙ的映射关系表示为函数：&lt;/p&gt; 
+&lt;p&gt;$$ Y=net(X) $$&lt;/p&gt; 
+&lt;p&gt;　　X向量经过net网络，输出Y，这样我们就可以通过一个定量的方式来表示数据，X数组的数字个数称为X的维度，那么图中X的维数是4，Y的维数是2，那么net函数的功能就是输入一个4维的点，输出一个二维的点。假定一个网络输入是M维，输出是N维，那么这个网络的功能就是输入一个M维的点，输出一个N维的点。&lt;/p&gt; 
+&lt;p&gt;　　我们知道改变权重和偏执可以改变网络的输出，那么可以得出一个结论：通过调整权重和偏执参数，可以把网络塑造成不同的函数。&lt;/p&gt; 
+&lt;p&gt;　　我们想象，如果左边输入的是一个图像的像素数组，大家都知道像素是０－２５５的数字。假如我们有一个100*100的图像，我们定义一个 $$ 10000 * 1000 * 100 * 2 $$ 的网络，我们期望能通过调整参数的方式，让函数具有这样的功能：当左边输入人的图片时，结果输出$$(1,0)$$这个点，当输入汽车时，结果输出$$ (0,1) $$，也就是说，可以用函数来分类，输入一个图像，让函数输出结果成为对应的类型，可以识别图像是人还是车。&lt;/p&gt; 
+&lt;p&gt;如果我们不做任何操作，那么网络是办不到的，因为它的计算结果我们无法确定，那么我们要改变这种计算结果，调整里面的权重和偏执就可以办到，可以将权重和偏执调整，然后网络就可以识别了。调整权重和偏执的值可以改变网络的输出，那么怎么调整就成为关键，调整参数的目标是让网络按我们预期的输出，具体的来说，我们希望通过调整参数，能让这个网络输入图像像素数组，输出类别$$(0,1)$$还是$$(1,0)$$，是人还是车。&lt;br&gt; 在实际网络中，输出的点不一定是以上的，那么我们可以让输出的点与上面两个点做一个度量，离代表人的点的距离与代表车的点的距离，离谁近，就判断是哪类。&lt;/p&gt; 
+&lt;h1&gt;3、调整参数，让网络计算的输出按我们预期的那样。&lt;/h1&gt; 
+&lt;p&gt;我们调整参数也不能乱调，因为乱调是没有结果的。那么我们调整一个参数是否有效怎么来判断呢？&lt;/p&gt; 
+&lt;p&gt;比如：我们输入人的像素，我们希望经过网络以后，输出是(1,0)，当我们输入是车，希望经过输出结果是(0,1)。&lt;/p&gt; 
+&lt;p&gt;下面就来看看我们怎么调整参数。&lt;/p&gt; 
+&lt;p&gt;我们开始输入一张人的图片，输出一个(y1,y2)，那么开始输出的(y1,y2)不是(1,0)，我们想通过不断调整权重和偏执让它变(1,0)，我们有办法吗？&lt;/p&gt; 
+&lt;p&gt;我们就要找差距，我们用(1,0) - (y1,y2)，相减后结果是(1-y1,0-y2)，这个就是差距，我们在几何里学过欧氏距离一个点到另一个点的距离公式: L = ((x1-x2)^2 + (y1-y2)^2)^1/2，这个不会说了吧，我们可以把我们的输出和希望的输出得出一个距离，这个距离就是输出和目标的差距离，我们用LOSS来表示，专业术语叫做损失。我们只要调整权重不断的减小这个损失，就可以能让网络更接近我们的目标。&lt;/p&gt; 
+&lt;p&gt;我们先来看一种笨办法，我们随机选一个权重，我们让它变大一点，计算出一个LOSS，让它变小一点计算出一个LOSS，两个LOSS比较一下，如果谁小就说明谁离调整的目标更近，就是有效的更新，如果通过暴力计算，我们对每个权重和偏执做调整， 。让LOSS变得最小，那么我们的函数就最接近我们的预期，比如我们输入人和输的图片，输出的点离(1,0)近，说明是人，离(0,1)近，说明是车。这样，我们就有一个识别网络。我们把调整参数，让LOSS最小的动作叫训练。&lt;/p&gt; 
+&lt;p&gt;　　现在的问题成为，如何调整参数让：目标与输出距离缩小。不断调整参数让预期点与输出的点的距离缩小。&lt;/p&gt; 
+&lt;p&gt;　　我们定义了LOSS，LOSS称为损失。&lt;/p&gt; 
+&lt;p&gt;　　我们复习一下函数的定义，自变量X和因变量Y。X-&amp;gt;Y的映射F叫(X,Y)的函数。&lt;/p&gt; 
+&lt;p&gt;　　对于某次固定的输入值，我们把权重W看成自变量，LOSS看成因变量，那么我们把它写成函数：&lt;/p&gt; 
+&lt;p&gt;$$LOSS = F(W)$$&lt;/p&gt; 
+&lt;p&gt;　　我们看到这个函数以后，我们要让LOSS变小，那么我们怎么调整W呢？我们学过导数知道,dy/dx，也就说是说，我们把x往导数反方向移动，可以让函数值变小，那么我们就这样调整：对于 y=f(x)来说：x0 = x0 - (dy/dx) * delta ，delta是一个很小量，这样就能减小y值，同理，我们的LOSS求对W的导数，将W值往反向调整，也可以减少LOSS，这样我们就有了调整W的方法，这样，我们就有办法调整W让LOSS减小了。&lt;/p&gt; 
+&lt;p&gt;　　这就是反向传播算法BP。BP主要是求LOSS对每个权重和偏执参数的偏导数，并把参数往偏导数的反向调整减小以减小LOSS，这样我们求出偏导数就可以对参数进行更新了。&lt;/p&gt; 
+&lt;p&gt;BP算法是部分神经网络调整参数的一种方法，其核心思想是通过计算参数的偏导数来调整参数降低损失值。&lt;/p&gt; 
+&lt;p&gt;下次我讲讲ＢＰ算法。&lt;/p&gt; 
+&lt;p&gt;　　&lt;/p&gt; 
+&lt;p&gt;　　有问题也欢迎加入深度学习与人工智能交流群，一起交流学习讨论，QQ群号码 374685750。谢谢大家的支持，我有时间会发更多的文章，谢谢大家的支持。&lt;/p&gt; 
+&lt;p&gt;　　本文可以转载，但是必须声明出处链接和说明；&lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>关于我们</title>
+      <link>http://www.ml4ai.com/post/about.html</link>
+      <pubDate>周二, 22 5月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">post/about.html</guid>
+      	<description>
+	&lt;h1&gt;ML4AI&lt;/h1&gt; 
+&lt;p&gt;关于ML4AI&lt;/p&gt; 
+&lt;p&gt;网站：&lt;a href=&quot;http://www.ml4ai.com&quot;&gt;www.ml4ai.com&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;代码: &lt;a href=&quot;https://gitee.com/sleechengn/ml4ai&quot;&gt;https://gitee.com/sleechengn/ml4ai&lt;/a&gt;&lt;/p&gt; 
+&lt;p&gt;这是一个基于JVM的机器学习工具箱，支持计算图，支持GPU，还在不断完成各种张量操作，它可以自动微分，使你专注于设计网络而不必考虑反向计算。&lt;/p&gt; 
+&lt;p&gt;旨在开发一个通用的计算图工具，通过java。我们有很多java开发者要转入深度学习很多同学都要重新学习python这种语言，然而python语言编写的程序不易于java程序开发者进行调用，所以开发一个基于java的工具非常必要。&lt;/p&gt; 
+&lt;p&gt;如果你也想加入，请联系作者：邮箱 &lt;a href=&quot;mailto:sleechengn@163.com&quot;&gt;sleechengn@163.com&lt;/a&gt;&lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>Tensorflow</title>
+      <link>http://www.ml4ai.com/post/tensorflow.html</link>
+      <pubDate>周二, 22 5月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">post/tensorflow.html</guid>
+      	<description>
+	&lt;h1&gt;Tensorflow&lt;/h1&gt; 
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tensorflow是一个Google推出的张量图计算工具，它并不是python编写的，只是支持python来调用它，所以tensorflow的性能是在大部分深度学习框架中比较快的，因为它的图模块运行在c++编写的引用模块中，它可以使用gpu进行运算，速度非常快&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;安装方法&lt;/strong&gt;&lt;/p&gt; 
+&lt;h4&gt;首先安装anaconda。&lt;/h4&gt; 
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;（这个直接下载对应版本安装就可以）。&lt;/p&gt; 
+&lt;h4&gt;安装numpy&lt;/h4&gt; 
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;安装命令：pip install numpy&lt;/p&gt; 
+&lt;h4&gt;安装tensorflow&lt;/h4&gt; 
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;命令：pip install tensorflow,当你是GPU支持时，pip install tensorflow-gpu来安装GPU版本，注意GPU版本要正常工作你必须安装cuda和cudnn工具，并且正确的设置，否则你的tensorflow可能不能正常运行。&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;简单说明&lt;/strong&gt;&lt;br&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Tensorflow是一个张量计算图工具，在tensorflow中，每个tensor都有一个op和op参与的依赖tensor，这样形成一个op图，op图是可以微分的，所以tensorflow优化器能够将所有的tensor的导数都求出来，优化器会通过导数来更新参数，进行优化。&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;资源&lt;/strong&gt;&lt;br&gt; anaconda: &lt;a href=&quot;https://www.anaconda.com/&quot;&gt;https://www.anaconda.com/&lt;/a&gt;&lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>循环神经网络</title>
+      <link>http://www.ml4ai.com/post/rnn_network.html</link>
+      <pubDate>周二, 22 5月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">post/rnn_network.html</guid>
+      	<description>
+	&lt;h1&gt;循环神经网络&lt;/h1&gt; 
+&lt;p&gt;循环网络是一种序列识别模型，在RNN中，我们可以使它来进行各种序列的数学分类、回归操作。&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;循环网络&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;1、RNN&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;2、双向RNN&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;3、LSTM&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;4、EncoderDecoder&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;1、RNN&lt;/h2&gt; 
+&lt;ul&gt; 
+ &lt;li&gt;计算公式&lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;$$ h_t = output_t = \sigma(x_tU+h_{t-1}W+bias) $$&lt;/p&gt; 
+&lt;p&gt;这里指的是一个RNN的计算图，我们对比发现，RNN的输出计算比一般网络的净输出多出了一此东西，也就是hidden state，它这样的结果就会与历史相关。我们通过这样的途径，可以很好的实现序列模型。&lt;/p&gt; 
+&lt;p&gt;当前我们的&lt;/p&gt; 
+&lt;p&gt;$$h_{0}$$&lt;/p&gt; 
+&lt;p&gt;可以是任意的张量，并非要由全0元素的tensor.&lt;/p&gt; 
+&lt;p&gt;伪代码&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-py&quot;&gt;def rnn(x,hidden):
+    output,s = acitve(x,hidden)
+    hidden = s
+    return output,hidden
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;p&gt;active方法首先将样本乘以U矩阵，再将state乘w矩阵，然后相加，再加上bias，最后非线性激活。我承认active方法比较难写，图是最直观的，但是图的话没有好的画图工具，所以还是请参考上面的公式。&lt;/p&gt; 
+&lt;p&gt;特别要注意的一点是&lt;/p&gt; 
+&lt;p&gt;$$ x_t $$&lt;/p&gt; 
+&lt;p&gt;是timestep中的一个时间点，我们的x的形状是&lt;/p&gt; 
+&lt;pre&gt;&lt;code class=&quot;language-js&quot;&gt;
+[batch_size,timestep,features]
+
+[
+    [
+        [1,2,3,4,5],
+        [6,7,8,9,0]
+    ],
+    [
+        [1,2,3,4,4],
+        [1,2,3,1,89]
+    ]
+]
+
+shape of [2*2*5]
+
+&lt;/code&gt;&lt;/pre&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;第一个维度是batch_size，意在多个样本&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;第二个维度是timestep，代表一个样本的不同timestep&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;第三个维度是一个timestep中一个周期中一个时间点的数据&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;p&gt;这个是一个3D Tensor,我们假定我们都是用tensor来表示数据的话。&lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>Pytorch</title>
+      <link>http://www.ml4ai.com/post/pytorch_introduce.html</link>
+      <pubDate>周二, 22 5月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">post/pytorch_introduce.html</guid>
+      	<description>
+	&lt;h1&gt;Pytorch&lt;/h1&gt; 
+&lt;p&gt;pytorch是一个张量前向运算、自动反向运算管理工具，对张量运算有很好的支持。&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;安装方法&lt;/strong&gt;&lt;br&gt; 我们先打开网站：&lt;a href=&quot;http://pytorch.org&quot;&gt;http://pytorch.org&lt;/a&gt; 选择你的环境，比如linux，pip，cuda9。&lt;br&gt; 完成以后生成命令，你把命令拷贝在你的cmd里执行即安装。&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;简单说明&lt;/strong&gt;&lt;br&gt; pytorch是一个深度学习计算图构建工具，它相对于tensorflow来说更灵活，为什么这样说呢，是因为它在构建计算图的时候是实时的，它记录变量的生命周期，即变量从什么操作得到，操作类型等。这非常重要，这样在进行自动微分的时候就能通过这种关系来计算，而tensorflow本身只是一张计算图，图的东西不可以更新，其实就是预先设计一个计算流程，然后再计算，这样导致了在计算过程需要改变计算图的时候是不能支持的。&lt;br&gt; 一般来说，研究人员选择pytorch验证，然后使用tensorflow打包模型服务。&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;资源&lt;/strong&gt;&lt;br&gt; pytorch文档：&lt;a href=&quot;http://pytorch-cn.readthedocs.io&quot;&gt;http://pytorch-cn.readthedocs.io&lt;/a&gt;&lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>神经网络优化器</title>
+      <link>http://www.ml4ai.com/post/optimizer.html</link>
+      <pubDate>周二, 22 5月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">post/optimizer.html</guid>
+      	<description>
+	&lt;h1&gt;更新器&lt;/h1&gt; 
+&lt;p&gt;更新器一个神经网络进行调节的策略，我们普通的SGD随机梯度下降会有很多局限，为了解决这些可以优化的问题引入多种策略，这些策略能加速神经网络的训练。&lt;/p&gt; 
+&lt;p&gt;我们也称更新器叫优化器。&lt;/p&gt; 
+&lt;p&gt;&lt;strong&gt;常用的更新器&lt;/strong&gt;&lt;/p&gt; 
+&lt;ul&gt; 
+ &lt;li&gt; &lt;p&gt;1、SGD 随机梯度下降&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;2、MOMENT 动量&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;3、Nesterov 牛顿下降&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;4、Adamgrad&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;5、Adamdelta&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;6、RMSProp&lt;/p&gt; &lt;/li&gt; 
+ &lt;li&gt; &lt;p&gt;7、Adam&lt;/p&gt; &lt;/li&gt; 
+&lt;/ul&gt; 
+&lt;h2&gt;SGD&lt;/h2&gt; 
+&lt;p&gt;这个是我们最常用的算法了，随机梯度下降，我们先来看一下梯度下降。&lt;br&gt; 普通的梯度下降是指我们一次性将所有的数据给网络，由网络反向计算loss对每个参数的偏导数，这个偏数对应的是所有的数据，所以这个梯度非常的准确。但是这样有一个问题就是当数据量大的时候不管是计算还是存储资源都会占用很大，这样使得我们很难训练神经网络参数，普通的GD对于小网络来说可以使用，对于大网络来说就不要去使用了，因为它的计算量非常大。&lt;/p&gt; 
+&lt;p&gt;SDG的更新方法：&lt;/p&gt; 
+&lt;p&gt;$$ \Delta_{\theta_t} = - \eta g_t $$&lt;/p&gt; 
+&lt;h2&gt;Moment&lt;/h2&gt; 
+&lt;p&gt;动量是一常见的更新策略，在动量的帮助下，可以加速神经网络的收敛，可以有效的节省收敛时间，因为动量是累积的，所以可以很快的方式达到收敛。&lt;br&gt; 公式：&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;http://www.ml4ai.com/images/moment-update-x.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;参数说明：&lt;/p&gt; 
+&lt;p&gt;$$ \text{参数：} \mu \text{ 衰减系数} $$&lt;/p&gt; 
+&lt;p&gt;$$ \text{参数：} v_{t-1} \text{ 上一次的速度} $$&lt;/p&gt; 
+&lt;p&gt;$$ \text{参数：} g_t \text{ 梯度} $$&lt;/p&gt; 
+&lt;p&gt;$$ \text{参数：} \eta \text{ 学习率} $$&lt;/p&gt; 
+&lt;p&gt;注意，衰减系数不能大于1，只能小于1，不能小于0。&lt;/p&gt; 
+&lt;h2&gt;Nesterov&lt;/h2&gt; 
+&lt;p&gt;这个牛顿法则是比运量更进一步，它首先更新参数，然后再进行动量计算，这样以来我们收剑速度可能更快，而且可以收反馈。&lt;/p&gt; 
+&lt;p&gt;&lt;img src=&quot;http://www.ml4ai.com/images/nesterov-update_x.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt; 
+&lt;p&gt;这种先更新，再来求梯度，然后再运量累积的做法实际上是加速二阶动量的方式，这种方法比动量在某些网络中表现更好。&lt;/p&gt;
+	</description>
+    </item>
+    <item>
+      <title>线性代数</title>
+      <link>http://www.ml4ai.com/post/linear_x.html</link>
+      <pubDate>周二, 22 5月 2018 00:00:00 +0800</pubDate>
+      <guid isPermaLink="false">post/linear_x.html</guid>
+      	<description>
+	&lt;h1&gt;线代基础知识&lt;/h1&gt; 
+&lt;hr&gt; 
+&lt;p&gt;对于机器学习来説，线性代数方便我们更好的理解，我们通过线性代数的方法更好的表示机器学习，这里线性代数指的是一些基本的线性代数内容，并不是高深的所有的内容。&lt;/p&gt; 
+&lt;h2&gt;1、行列式&lt;/h2&gt; 
+&lt;hr&gt; 
+&lt;p&gt;本章主要介绍n阶行列式的定义、性质、计算方法，此外还要讲解我n阶行列式计算n元线性方程组的克拉默法则。&lt;/p&gt; 
+&lt;h3&gt;二阶与三阶行列式&lt;/h3&gt; 
+&lt;p&gt;二元线性方程组与二阶行列式：&lt;/p&gt; 
+&lt;p&gt;$$&lt;br&gt; \left {&lt;br&gt; \begin{array}{c}&lt;br&gt; a_{11}x_1+a_{12}x_2=b_1 \&lt;br&gt; a_{21}x_1+a_{22}x_2=b_2&lt;br&gt; \end{array}&lt;br&gt; \right.&lt;br&gt; $$&lt;/p&gt; 
+&lt;p&gt;$$ \text {为了消去未知数} x_2 \text {,以} a_{22} \text{与}a_{12}\text{分别乘上列两方程的两端,然后两个方程相减,得} $$&lt;/p&gt; 
+&lt;p&gt;$$ (a_{11}a_{22} - a_{12}a_{21})x_1=b_1a_{22} - a_{12}b_2 $$&lt;/p&gt; 
+&lt;p&gt;$$ \text {类似地，消去} x_2 \text {，得} $$&lt;/p&gt; 
+&lt;p&gt;$$ (a_{12}a_{21} - a_{11}a_{22})x_2 = b_1a_{21} - a_{11}b_2 $$&lt;/p&gt;
+	</description>
+    </item>
+
+  </channel> 
+</rss>

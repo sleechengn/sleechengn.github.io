@@ -10,14 +10,14 @@
     <meta name="generator" content="JBake">
 
     <!-- Le styles -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/asciidoctor.css" rel="stylesheet">
-    <link href="css/base.css" rel="stylesheet">
-    <link href="css/prettify.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
+      <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
 
     <!-- Fav and touch icons -->
@@ -25,7 +25,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="../favicon.ico">
     <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
   </head>
@@ -46,8 +46,8 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="post/about.html">关于</a></li>
+            <li><a href="../index.html">首页</a></li>
+            <li><a href="../post/about.html">关于</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">推荐博文<b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -63,42 +63,29 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
-    <div class="container">
+    <div class="container">	
 	<div class="page-header">
-		<h3>machine learning for artificial intelligence</h3>
+		<h1>线性代数</h1>
 	</div>
-  			<a href="post/about.html"><h3>关于我们</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">关于ML4AI，它是一个张量图计算工具，支持自动微分，开发些项目的原因在于市场上缺少一个基于JVM的易用深度学习研究工具，希望大家多多支持。</p>
-  			<a href="post/bp_first.html"><h3>BP神经网络</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">什么是神经网络，它是如何计算的，神经网络图像识别，神经网络逼近。</p>
-  			<a href="post/bp_se.html"><h3>反向传播</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">神经网络输入输出的计算，损失函数，导数。</p>
-  			<a href="post/deeplearning4j_stp.html"><h3>DL4J</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">deeplearning4j是一个基于jvm的机器学习框架，主要应用于商业环境下的机器学习应用场景。</p>
-  			<a href="post/linear_x.html"><h3>线性代数</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">线性代数</p>
-  			<a href="post/optimizer.html"><h3>神经网络优化器</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">更新器，优化器。</p>
-  			<a href="post/pytorch_introduce.html"><h3>Pytorch</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">Pytorch</p>
-  			<a href="post/rnn_network.html"><h3>循环神经网络</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">循环神经网络，递归网络</p>
-  			<a href="post/tensorflow.html"><h3>Tensorflow</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">Tensorflow,一个张量图计算工具</p>
-	
+
+	<p><em>22 五月 2018</em></p>
+
+	<p><h1>线代基础知识</h1> 
+<hr> 
+<p>对于机器学习来説，线性代数方便我们更好的理解，我们通过线性代数的方法更好的表示机器学习，这里线性代数指的是一些基本的线性代数内容，并不是高深的所有的内容。</p> 
+<h2>1、行列式</h2> 
+<hr> 
+<p>本章主要介绍n阶行列式的定义、性质、计算方法，此外还要讲解我n阶行列式计算n元线性方程组的克拉默法则。</p> 
+<h3>二阶与三阶行列式</h3> 
+<p>二元线性方程组与二阶行列式：</p> 
+<p>$$<br> \left {<br> \begin{array}{c}<br> a_{11}x_1+a_{12}x_2=b_1 \<br> a_{21}x_1+a_{22}x_2=b_2<br> \end{array}<br> \right.<br> $$</p> 
+<p>$$ \text {为了消去未知数} x_2 \text {,以} a_{22} \text{与}a_{12}\text{分别乘上列两方程的两端,然后两个方程相减,得} $$</p> 
+<p>$$ (a_{11}a_{22} - a_{12}a_{21})x_1=b_1a_{22} - a_{12}b_2 $$</p> 
+<p>$$ \text {类似地，消去} x_2 \text {，得} $$</p> 
+<p>$$ (a_{12}a_{21} - a_{11}a_{22})x_2 = b_1a_{21} - a_{11}b_2 $$</p></p>
+
 	<hr />
 	
-	<p>Older posts are available in the <a href="archive.html">archive</a>.</p>
-
 		</div>
 		<div id="push"></div>
     </div>
@@ -112,9 +99,9 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/prettify.js"></script>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
     <audio autoplay="autoplay">
         <source src="/av/Alpha.mp3" type="audio/mpeg" />
         <source src="/av/breathAnd_Life.mp3" type="audio/mpeg" />

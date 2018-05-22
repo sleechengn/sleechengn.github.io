@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>深度学习与人工智能</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../favicon.ico">
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">ML4AI</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">首页</a></li>
+            <li><a href="../post/about.html">关于</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">推荐博文<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/post/bp_first.html">神经网络入门</a></li>
+                <li><a href="/post/bp_se.html">反向传播算法</a></li>
+                <li class="divider"></li>
+                <li><a href="/post/deeplearning4j_stp.html">Deeplearning4j</a></li>
+                <li><a href="/post/tensorflow.html">Tensorflow</a></li>
+                <li><a href="/post/pytorch_introduce.html">Pytorch</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">	
+	<div class="page-header">
+		<h1>DL4J</h1>
+	</div>
+
+	<p><em>22 五月 2018</em></p>
+
+	<p><h1>简介</h1> 
+<hr> 
+<p><strong>deeplearning4j</strong>是一个基于jvm的机器学习框架，主要应用于商业环境下的机器学习应用场景。为什么这样説呢？因为它提供了商业化环境下运行的支撑体系，比如GPU、Spark等的支持，一般来説对于理论验证来説是不需要spark这些的，所以它是为商业应用打造的，它的主要维护机构来自于一家美国的初创公司：<strong>skymind</strong>.</p> 
+<p>主页地址：<a href="http://www.deeplearning4j.org">http://www.deeplearning4j.org</a></p> 
+<p>中文说明：<a href="http://www.deeplearning4j.org/cn">http://www.deeplearning4j.org/cn</a></p> 
+<p>github:<a href="https://github.com/deeplearning4j">https://github.com/deeplearning4j</a></p> 
+<p>安装前准备：</p> 
+<ul> 
+ <li> <p>apache maven</p> </li> 
+ <li> <p>java sdk1.8</p> </li> 
+ <li> <p>eclipse/idea</p> </li> 
+ <li> <p>git</p> </li> 
+</ul> 
+<p>以上这些是你需要安装的</p> 
+<p>maven主要用于管理项目所依赖的库，用于管理java的jar仓库，它能让你方便的引入一个软件栈。</p> 
+<p>java不必説了，它的下载地址在oracle，请自行前往下载，注意版本。</p> 
+<p>eclipse/idea是开发工具，也就是ide，一个好的开发工具会大大增加效率，因为本人使用的是eclipse和idea，java还有很多开发工具，这里就不一一说明了。但是有一点要注意，选用的ide必须支持maven管理依赖包，不然手动配置会很麻烦。</p> 
+<p>git是一个代码维护工具，类似的还有svn，主要用于代码管理</p> 
+<h2>安装java</h2> 
+<p>请在oracle下载java sdk，注意下载1.8版本，虽然其它版本也许支持，但是不同的版本有一定的区别，为了少走弯路用1.8.</p> 
+<h2>下载deeplearning4j演示</h2> 
+<p>github地址：<a href="https://github.com/deeplearning4j/dl4j-examples.git">https://github.com/deeplearning4j/dl4j-examples.git</a></p> 
+<p>将代码下载到本地。</p> 
+<p>下面以idea为例讲一下如何导入运行</p> 
+<h3>配置git</h3> 
+<p><img src="http://www.ml4ai.com/images/click_config.png" alt="image"></p> 
+<p><img src="http://www.ml4ai.com/images/conf_of_git.png" alt="image"></p> 
+<p>把git的路径配置好，不然git可能不能正常工作，后面不没有办法了。</p> 
+<h3>配置maven</h3> 
+<p><img src="http://www.ml4ai.com/images/click_config.png" alt="image"></p> 
+<p><img src="http://www.ml4ai.com/images/conf_maven_of.png" alt="image"></p> 
+<p>maven home 一定要配置好,就是你maven所有的目录路径</p> 
+<p>还有就是User setting，选override，指定maven目录下的conf/settings.xml<br> 因为这样可以使用自己定义的镜像，用阿里云挺快，所以可以使用阿里云的仓库。</p> 
+<p><strong>阿里云：</strong></p> 
+<pre><code class="language-xml">&lt;mirror&gt;
+        &lt;id&gt;alimaven&lt;/id&gt;
+        &lt;name&gt;aliyun maven&lt;/name&gt;
+        &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;
+        &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+    &lt;/mirror&gt;
+</code></pre> 
+<p>这个设置可以加速你的下载，因为你在国内访问中央仓库很慢，把这个配置就复制到settings.xml里的mirrors里面就行</p> 
+<p>开始导入</p> 
+<p><img src="http://www.ml4ai.com/images/sopen.png" alt="image"></p> 
+<p><img src="http://www.ml4ai.com/images/so.png" alt="image"></p> 
+<p><img src="http://www.ml4ai.com/images/op.png" alt="image"></p> 
+<p><img src="http://www.ml4ai.com/images/ip.png" alt="image"></p> 
+<p>开始下载jar包了，这个要等一会儿，只要没中断就等。</p> 
+<p>在idea里配置java8就不説了，这些问题做为常识自己解决。<br> 然后就可以运行了，下面讲讲几个特别坑的环境问题。</p> 
+<h3>电脑只有cpu没有GPU怎么办</h3> 
+<p>如果你电脑没有nvidia显卡或者还没有安装cuda工具以及cudnn，那么请在主pom.xml里设置</p> 
+<pre><code class="language-xml">&lt;nd4j.backend&gt;nd4j-native-platform&lt;/nd4j.backend&gt;
+</code></pre> 
+<p>如果你的电脑里有显示卡并安装了cuda工具，则按对应的版本修改</p> 
+<pre><code class="language-xml">&lt;nd4j.backend&gt;nd4j-cuda-9.1-platform&lt;/nd4j.backend&gt;
+</code></pre> 
+<p>假定你用的cpu，还有一个坑，用cpu也启动不了。你要把对应pom.xml 里的下列依赖去掉</p> 
+<pre><code class="language-xml">&lt;dependency&gt;
+                &lt;groupId&gt;org.nd4j&lt;/groupId&gt;
+                &lt;artifactId&gt;nd4j-cuda-8.0-platform&lt;/artifactId&gt;
+                &lt;version&gt;${nd4j.version}&lt;/version&gt;
+            &lt;/dependency&gt;
+</code></pre> 
+<p>这些不同版本都要去掉，这样再启动，如果还有一个错误，就是没有mkl,这是最后一个坑。<br> 请按图中设置启动参数</p> 
+<p><img src="http://www.ml4ai.com/images/edit_run_conf.png" alt="image"></p> 
+<p><img src="http://www.ml4ai.com/images/add_dlib.png" alt="image"></p> 
+<pre><code class="language-xml">-Djava.library.path
+</code></pre> 
+<p>加上这个参数就可以。</p> 
+<p>有问题也欢迎加入深度学习与人工智能交流群，一起交流学习讨论，QQ群号码 374685750。谢谢大家的支持，我有时间会发更多的文章，谢谢大家的支持。</p> 
+<p>本文可以转载，但是必须声明出处链接和说明；</p></p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2018 | Power by <a href="http://www.ml4ai.com/">ML4AI</a> </p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
+    <audio autoplay="autoplay">
+        <source src="/av/Alpha.mp3" type="audio/mpeg" />
+        <source src="/av/breathAnd_Life.mp3" type="audio/mpeg" />
+        <source src="/av/Victory.mp3" type="audio/mpeg" />
+        您的浏览器不支持 audio 标签。
+    </audio>
+  </body>
+</html>

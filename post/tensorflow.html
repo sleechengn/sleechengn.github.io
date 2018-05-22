@@ -10,14 +10,14 @@
     <meta name="generator" content="JBake">
 
     <!-- Le styles -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/asciidoctor.css" rel="stylesheet">
-    <link href="css/base.css" rel="stylesheet">
-    <link href="css/prettify.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/asciidoctor.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/prettify.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
+      <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
 
     <!-- Fav and touch icons -->
@@ -25,7 +25,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="../favicon.ico">
     <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
   </head>
@@ -46,8 +46,8 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="post/about.html">关于</a></li>
+            <li><a href="../index.html">首页</a></li>
+            <li><a href="../post/about.html">关于</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">推荐博文<b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -63,42 +63,27 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
-    <div class="container">
+    <div class="container">	
 	<div class="page-header">
-		<h3>machine learning for artificial intelligence</h3>
+		<h1>Tensorflow</h1>
 	</div>
-  			<a href="post/about.html"><h3>关于我们</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">关于ML4AI，它是一个张量图计算工具，支持自动微分，开发些项目的原因在于市场上缺少一个基于JVM的易用深度学习研究工具，希望大家多多支持。</p>
-  			<a href="post/bp_first.html"><h3>BP神经网络</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">什么是神经网络，它是如何计算的，神经网络图像识别，神经网络逼近。</p>
-  			<a href="post/bp_se.html"><h3>反向传播</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">神经网络输入输出的计算，损失函数，导数。</p>
-  			<a href="post/deeplearning4j_stp.html"><h3>DL4J</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">deeplearning4j是一个基于jvm的机器学习框架，主要应用于商业环境下的机器学习应用场景。</p>
-  			<a href="post/linear_x.html"><h3>线性代数</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">线性代数</p>
-  			<a href="post/optimizer.html"><h3>神经网络优化器</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">更新器，优化器。</p>
-  			<a href="post/pytorch_introduce.html"><h3>Pytorch</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">Pytorch</p>
-  			<a href="post/rnn_network.html"><h3>循环神经网络</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">循环神经网络，递归网络</p>
-  			<a href="post/tensorflow.html"><h3>Tensorflow</h3></a>
-  			<p>22 五月 2018</p>
-  			<p style="color:#999">Tensorflow,一个张量图计算工具</p>
-	
+
+	<p><em>22 五月 2018</em></p>
+
+	<p><h1>Tensorflow</h1> 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tensorflow是一个Google推出的张量图计算工具，它并不是python编写的，只是支持python来调用它，所以tensorflow的性能是在大部分深度学习框架中比较快的，因为它的图模块运行在c++编写的引用模块中，它可以使用gpu进行运算，速度非常快</p> 
+<p><strong>安装方法</strong></p> 
+<h4>首先安装anaconda。</h4> 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（这个直接下载对应版本安装就可以）。</p> 
+<h4>安装numpy</h4> 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;安装命令：pip install numpy</p> 
+<h4>安装tensorflow</h4> 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;命令：pip install tensorflow,当你是GPU支持时，pip install tensorflow-gpu来安装GPU版本，注意GPU版本要正常工作你必须安装cuda和cudnn工具，并且正确的设置，否则你的tensorflow可能不能正常运行。</p> 
+<p><strong>简单说明</strong><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tensorflow是一个张量计算图工具，在tensorflow中，每个tensor都有一个op和op参与的依赖tensor，这样形成一个op图，op图是可以微分的，所以tensorflow优化器能够将所有的tensor的导数都求出来，优化器会通过导数来更新参数，进行优化。</p> 
+<p><strong>资源</strong><br> anaconda: <a href="https://www.anaconda.com/">https://www.anaconda.com/</a></p></p>
+
 	<hr />
 	
-	<p>Older posts are available in the <a href="archive.html">archive</a>.</p>
-
 		</div>
 		<div id="push"></div>
     </div>
@@ -112,9 +97,9 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/prettify.js"></script>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/prettify.js"></script>
     <audio autoplay="autoplay">
         <source src="/av/Alpha.mp3" type="audio/mpeg" />
         <source src="/av/breathAnd_Life.mp3" type="audio/mpeg" />
