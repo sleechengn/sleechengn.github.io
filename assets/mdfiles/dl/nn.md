@@ -165,8 +165,13 @@ h1的计算方法是：
 <p align="center"><img src="https://latex.codecogs.com/gif.latex?LOSS%20=%20F(W)"/></p>
 
 
-　　我们看到这个函数以后，我们要让LOSS变小，那么我们怎么调整W呢？我们学过导数知道,dy/dx，也就说是说，我们把x往导数反方向移动，可以让函数值变小，那么我们就这样调整：对于 y=f(x)来说：<p align="center"><img src="https://latex.codecogs.com/gif.latex?x_0%20=%20x_0%20-%20&#x5C;frac{d_y}{d_x}%20*%20&#x5C;delta"/></p>  
- ，<p align="center"><img src="https://latex.codecogs.com/gif.latex?&#x5C;delta"/></p>  
+　　我们看到这个函数以后，我们要让LOSS变小，那么我们怎么调整W呢？我们学过导数知道,dy/dx，也就说是说，我们把x往导数反方向移动，可以让函数值变小，那么我们就这样调整：对于 y=f(x)来说：
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?x_0%20=%20x_0%20-%20&#x5C;frac{d_y}{d_x}%20*%20&#x5C;delta"/></p>  
+
+ ，
+
+ <p align="center"><img src="https://latex.codecogs.com/gif.latex?&#x5C;delta"/></p>
+
 是一个很小量，这样就能减小y值，同理，我们的LOSS求对W的导数，将W值往反向调整，也可以减少LOSS，这样我们就有了调整W的方法，这样，我们就有办法调整W让LOSS减小了。
 
 
