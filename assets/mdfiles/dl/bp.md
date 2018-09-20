@@ -36,7 +36,7 @@
 
 如果你知道导数的含义其实你已经知道该怎么做了，那就是求出在
 
-<p align="center"><img src="https://latex.codecogs.com/gif.latex?(x_0,y_0)"/></p>  
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?(z_0,x_0,y_0)"/></p>  
 
 
 处的偏导数，然后将
@@ -44,7 +44,7 @@
 <p align="center"><img src="https://latex.codecogs.com/gif.latex?x_0,y_0"/></p>  
 
 
-往偏导数的方向移动一小步，那个
+往偏导数的方向移动一小步，那么
 
 <p align="center"><img src="https://latex.codecogs.com/gif.latex?z_0"/></p>  
 
